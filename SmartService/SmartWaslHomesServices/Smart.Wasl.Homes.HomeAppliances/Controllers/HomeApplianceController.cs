@@ -14,6 +14,7 @@ using Smart.Wasl.Homes.Services.HomeAppliances.Helper;
 using Smart.Wasl.Homes.Services.HomeAppliances.Domain;
 using Smart.Wasl.Homes.Services.HomeAppliances.Domain.Interfaces;
 using Microsoft.Extensions.Logging;
+using System.Net.Http;
 
 // For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 

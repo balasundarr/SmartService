@@ -133,8 +133,9 @@ namespace Smart.Wasl.Homes.Services.HomeAppliances
             app.UseStaticFiles();
             //app.UseByPassAuth();
             app.UseAuthentication();
-          
-          
+            app.UseCors("allowall");
+
+
 
             app.UseSwagger()
            .UseSwaggerUI(c =>
