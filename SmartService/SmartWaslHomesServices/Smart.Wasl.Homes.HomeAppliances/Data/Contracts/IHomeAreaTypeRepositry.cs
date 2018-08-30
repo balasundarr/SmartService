@@ -17,10 +17,16 @@ namespace Smart.Wasl.Homes.Services.HomeAppliances.Data.Contracts
 
         Task<HomeAreaType> GetHomeAreaTypeById(int paraHomeAreaTypeId);
 
+        Task<IEnumerable<HomeAreaType>> GetAll();
+               
+
         Task<RoomCoordinate> GetHomeAreaTypeRoomCoordinateById(int paraHomeAreaTypeId);
 
         Task<IEnumerable<Appliance>> GetAppliancesById(int paraHomeAreaTypeId);
 
         Task<IEnumerable<Entrance>> GetEntranceByyId(int paraHomeAreaTypeId);
+
+       
+      
     }
 }

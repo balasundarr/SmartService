@@ -46,6 +46,12 @@ namespace Smart.Wasl.Homes.Services.HomeAppliances.Domain.Repositries
            .FirstOrDefaultAsync(item => item.Id == paraCityId);
             return local_City;
         }
+
+        public async Task<IEnumerable<City>> GetAll()
+         => await DbContext
+             .Set<City>()
+             .ToListAsync();
+
         public async  Task<State> GetCityStateById(int paraCityId)
         {
             City local_City = await DbContext.Set<City>().FirstOrDefaultAsync(item => item.Id == paraCityId);

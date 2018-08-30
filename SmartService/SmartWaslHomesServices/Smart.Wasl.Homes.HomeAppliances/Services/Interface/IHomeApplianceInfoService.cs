@@ -16,6 +16,8 @@ namespace Smart.Wasl.Homes.Services.HomeAppliances.Services.Interface
     {
         Task<IEntity> GetObjectsById(int paraId, IEntity paraEntity);
 
+        Task<IEnumerable<IEntity>> GetAll(String paramName);
+
         Task<IEntity> GetLocationById(int paraId, IEntity paraEntity);
             
         Task<IEntity> GetHomeAppliancesObjets(int paraObjectId, IEntity paraEntity);

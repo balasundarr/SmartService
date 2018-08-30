@@ -17,6 +17,8 @@ namespace Smart.Wasl.Homes.Services.HomeAppliances.Data.Contracts
 
         Task<Appliance> GetApplianceById(int paraApplianceId);
 
+        Task<IEnumerable<Appliance>> GetAll();
+
         Task<HomeAreaType> GetApplianceHomeAreaTypeById(int paraApplianceId);
 
         Task<ICollection<ApplianceAction>> GetApplianceActionById(int paraApplianceId);

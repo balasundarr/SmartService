@@ -18,7 +18,9 @@ namespace Smart.Wasl.Homes.Services.HomeAppliances.Data.Contracts
 
         Task<Contact> GetContactById(int paraContactId);
 
-       Task<ICollection<Address>> GetContactAddressById(int paraContactId);
+        Task<IEnumerable<Contact>> GetAll();
+
+        Task<ICollection<Address>> GetContactAddressById(int paraContactId);
 
         Task<ContactType> GetContactTypeById(int paraContactId);
 

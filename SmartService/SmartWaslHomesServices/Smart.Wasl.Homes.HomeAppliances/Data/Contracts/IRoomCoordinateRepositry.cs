@@ -17,5 +17,7 @@ namespace Smart.Wasl.Homes.Services.HomeAppliances.Data.Contracts
         Task<Int32> DeleteRoomCoordinateAsync(RoomCoordinate paraentity);
 
         Task<RoomCoordinate> GetRoomCoordinateById(int paraRoomCoordinatId);
+
+        Task<IEnumerable<RoomCoordinate>> GetAll();
     }
 }

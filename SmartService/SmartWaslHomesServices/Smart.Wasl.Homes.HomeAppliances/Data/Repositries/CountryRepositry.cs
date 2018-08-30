@@ -44,6 +44,12 @@ namespace Smart.Wasl.Homes.Services.HomeAppliances.Domain.Repositries
                .Set<Country>()
                .FirstOrDefaultAsync(item => item.Id == paraCountryId);
 
+
+        public async Task<IEnumerable<Country>> GetAll()
+              => await DbContext
+                 .Set<Country>()
+                 .ToListAsync();
+
         public async Task<ICollection<State>> GetStatesById(int paraCountryId)
           => await DbContext
                .Set<State>()

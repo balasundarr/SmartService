@@ -13,6 +13,7 @@ using Smart.Wasl.Homes.Services.HomeAppliances.Settings;
 using Smart.Wasl.Homes.Services.HomeAppliances.Helper;
 using Smart.Wasl.Homes.Services.HomeAppliances.Domain;
 using Smart.Wasl.Homes.Services.HomeAppliances.Domain.Interfaces;
+using Microsoft.Extensions.Logging;
 
 // For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -31,39 +32,70 @@ namespace Smart.Wasl.Homes.Services.HomeAppliances.Controllers
                                )
     {
         HomeApplianceContext = context ?? throw new ArgumentNullException(nameof(context));
-
-
         settings = setting.Value;
         ((DbContext)context).ChangeTracker.QueryTrackingBehavior = QueryTrackingBehavior.NoTracking;
     }
-    
-        //    [HttpGet("Index")]
-        //    public async Task<IActionResult> Index([FromQuery(Name = "sortValue")]string sortValue, [FromQuery(Name = "showDeactivated")] bool showDeactivated)
+    [HttpGet()]
+    public IActionResult Index()
+    {
+        return Redirect("~/swagger");
+    }
+
     [HttpGet("{QueryObject}/{name=string}/{id=int}")]
     public async Task<IActionResult> QueryObject(String name, int id)
     {
-       // var options = new DbContextOptionsBuilder<HomeAppliancesContext>().Options;
-
-        if (name.Contains("City"))
-        {
+            var local_logger = LogHelper.GetLogger<HomeApplianceInfoService>();
+            try
+            {
+               
                 IHomeApplianceInfoService hainfo = new HomeApplianceInfoService(
-                   LogHelper.GetLogger<HomeApplianceInfoService>(),
-                   new UserInfo { Name = "qa" },
-                   HomeApplianceContext);
-              // new HomeAppliancesContext(options));
-                City local_City = new City();
-                local_City = (hainfo.GetObjectsById(id, local_City as IEntity).GetAwaiter().GetResult()) as City;
-                return  Ok(local_City);
+                    local_logger,
+                    new UserInfo { Name = "qa" },
+                    HomeApplianceContext);
+                Type t = Type.GetType("Smart.Wasl.Homes.Services.HomeAppliances.Domain." + name);
+                IEntity o = Activator.CreateInstance(t) as IEntity;
+                o = await (hainfo.GetObjectsById(id, o));
+                return Ok(o);
             }
-            return   NotFound();
+            catch( Exception param_Exception)
+            {
 
+                local_logger.LogDebug("From HomeApplianceInfoService",param_Exception);
+                return NotFound();
+            }
+     }
+
+        [HttpGet("{QueryObject}/{name=string}")]
+        public async Task<IActionResult> QueryObject(String name)
+        {
+            var local_logger = LogHelper.GetLogger<HomeApplianceInfoService>();
+            try
+            {
+
+                IHomeApplianceInfoService hainfo = new HomeApplianceInfoService(
+                    local_logger,
+                    new UserInfo { Name = "qa" },
+                    HomeApplianceContext);
+                Type t = Type.GetType("Smart.Wasl.Homes.Services.HomeAppliances.Domain." + name);
+                name = $"Smart.Wasl.Homes.Services.HomeAppliances.Domain." + name;
+                IEnumerable<IEntity> o =null;
+                o =  await (hainfo.GetAll(name));
+                return Ok(o);
+            }
+            catch (Exception param_Exception)
+            {
+
+                local_logger.LogDebug("From HomeApplianceInfoService", param_Exception);
+                return NotFound();
+            }
         }
-    //[HttpGet]
-    //[Route("[Manage]")]
-    //public Task<IActionResult> Manage([FromQuery]string appliancename, int id)
 
-    //{
-    //    throw new NotImplementedException();
-    //}
-}
+        //[HttpGet]
+        //[Route("[Manage]")]
+        //public Task<IActionResult> Manage([FromQuery]string appliancename, int id)
+
+        //{
+        //    throw new NotImplementedException();
+        //}
+    }
 }

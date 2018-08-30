@@ -17,24 +17,12 @@ namespace Smart.Wasl.Homes.Services.HomeAppliances
         {
             //CreateWebHostBuilder(args).Build().Run();
             BuildWebHost(args)
-                .MigrateDbContext<HomeAppliances.Data.HomeAppliancesContext>((context, services) =>
-                {
-                   // var db = services.GetService<HomeDbContext>();
-                    //HomeDbContext.Seed(db);
-                })
-                .Run();
+            .Run();
         }
         public static IWebHost BuildWebHost(string[] args) =>
            WebHost.CreateDefaultBuilder(args)
                .UseStartup<Startup>()
                .UseApplicationInsights()
                .Build();
-        //public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
-        //    //WebHost.CreateDefaultBuilder(args)
-        //    //    .UseStartup<Startup>();
-        //    WebHost.CreateDefaultBuilder(args)
-        //                .UseStartup<Startup>()
-        //             //   .UseApplicationInsights()
-        //                .Build();
     }
 }

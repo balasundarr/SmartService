@@ -15,11 +15,6 @@ namespace Smart.Wasl.Homes.Services.HomeAppliances.Data.Configuration
             //Primary Table
             parabuilder.ToTable("Contact");
 
-            // Mapping for table
-            parabuilder.ToTable("Contact", "Address");
-            parabuilder.ToTable("Contact", "ContactType");
-
-
             // Set key for entity
             parabuilder.HasKey(p => p.Id);
 

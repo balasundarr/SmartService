@@ -16,13 +16,6 @@ namespace Smart.Wasl.Homes.Services.HomeAppliances.Data.Configuration
             //Primary Table
             parabuilder.ToTable("HomeAreaType");
 
-            // Mapping for table
-            parabuilder.ToTable("HomeAreaType", "Appliance");
-            parabuilder.ToTable("HomeAreaType", "Location");
-            parabuilder.ToTable("HomeAreaType", "RoomCoordinate");
-            parabuilder.ToTable("HomeAreaType", "Entrance");
-
-
             // Set key for entity
             parabuilder.HasKey(p => p.Id);
 

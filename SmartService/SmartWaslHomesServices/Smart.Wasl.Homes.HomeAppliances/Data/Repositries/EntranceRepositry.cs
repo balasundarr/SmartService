@@ -44,6 +44,9 @@ namespace Smart.Wasl.Homes.Services.HomeAppliances.Data.Repositries
                .Set<Entrance>()
                .FirstOrDefaultAsync(item => item.Id == paraEntranceId);
 
-
+        public async Task<IEnumerable<Entrance>> GetAll()
+          => await DbContext
+             .Set<Entrance>()
+             .ToListAsync();
     }
 }

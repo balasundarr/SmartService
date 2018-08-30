@@ -44,7 +44,10 @@ namespace Smart.Wasl.Homes.Services.HomeAppliances.Data.Repositries
             .Set<RoomCoordinate>()
            .FirstOrDefaultAsync(item => item.Id == paraRoomCoordinatId);
 
-
+        public async Task<IEnumerable<RoomCoordinate>> GetAll()
+           => await DbContext
+               .Set<RoomCoordinate>()
+               .ToListAsync();
 
     }
 }

@@ -38,10 +38,16 @@ namespace Smart.Wasl.Homes.Services.HomeAppliances.Domain.Repositries
 
             return await CommitChangesAsync();
         }
+        
         public async Task<Home> GetHomeById(int paraHomeId)
             => await DbContext
                 .Set<Home>()
                 .FirstOrDefaultAsync(item => item.Id == paraHomeId);
+
+        public async Task<IEnumerable<Home>> GetAll()
+            => await DbContext
+                .Set<Home>()
+                .ToListAsync();
 
         public async Task<IEnumerable<Address>> GetAddresssById(int paraHomeId)
           => await DbContext.Set<Address>().Include(a => a.Contact)

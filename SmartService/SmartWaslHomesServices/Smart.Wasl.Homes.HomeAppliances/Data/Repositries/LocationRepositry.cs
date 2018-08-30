@@ -44,6 +44,10 @@ namespace Smart.Wasl.Homes.Services.HomeAppliances.Data.Repositries
                .Set<Location>()
                .FirstOrDefaultAsync(item => item.Id == paraLocatioId);
 
+        public async Task<IEnumerable<Location>> GetAll()
+           => await DbContext
+              .Set<Location>()
+              .ToListAsync();
 
 
     }

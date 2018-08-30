@@ -23,10 +23,10 @@ namespace Smart.Wasl.Homes.Services.HomeAppliances.Data.Configuration
 
             // Set mapping for columns
             parabuilder.Property(p => p.Id).HasColumnType("int").IsRequired();
-            parabuilder.Property(p => p.Left).HasColumnType("int").IsRequired();
-            parabuilder.Property(p => p.Right).HasColumnType("int").IsRequired();
-            parabuilder.Property(p => p.TopLeft).HasColumnType("int").IsRequired();
-            parabuilder.Property(p => p.TopRight).HasColumnType("int").IsRequired();
+            parabuilder.Property(p => p.Left).HasColumnType("decimal").IsRequired();
+            parabuilder.Property(p => p.Right).HasColumnType("decimal").IsRequired();
+            parabuilder.Property(p => p.TopLeft).HasColumnType("decimal").IsRequired();
+            parabuilder.Property(p => p.TopRight).HasColumnType("decimal").IsRequired();
          
             parabuilder.Property(p => p.CreationUser).HasColumnType("varchar(25)").IsRequired();
             parabuilder.Property(p => p.CreationDateTime).HasColumnType("datetime").IsRequired();

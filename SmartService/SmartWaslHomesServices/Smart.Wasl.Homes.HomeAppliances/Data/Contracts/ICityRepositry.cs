@@ -16,6 +16,8 @@ namespace Smart.Wasl.Homes.Services.HomeAppliances.Data.Contracts
 
         Task<City> GetCityById(int paraCityId);
 
+        Task<IEnumerable<City>> GetAll();
+
         Task<Int32> DeleteCityeAsync(City paraentity);
                
         Task<State> GetCityStateById(int paraCityId);

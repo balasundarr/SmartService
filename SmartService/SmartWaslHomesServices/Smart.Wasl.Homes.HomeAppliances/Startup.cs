@@ -47,34 +47,23 @@ namespace Smart.Wasl.Homes.Services.HomeAppliances
             //}
 
             services.AddMvc();
-            //services.AddTransient<DiscountService>(sp =>
-            //{
-            //    var logger = sp.GetRequiredService<ILogger<DiscountService>>();
-            //    return new DiscountService(Configuration["discountsvc"], logger);
-            //});
+           
             services.AddTransient<HomeApplianceActionService>();
             services.AddTransient<HomeApplianceManageService>();
             services.AddTransient<HomeApplianceInfoService>();
           
-            services.AddSwaggerGen(c =>
-            {
-                c.SwaggerDoc("v1", new Info { Title = "Home Api", Version = "v1" });
-            });
-
-            //  services.Configure<CurrencySettings>(Configuration.GetSection("currency"));
-
             services.Configure<AppSettings>(Configuration);
-            //services.AddSwaggerGen(options =>
-            //{
-            //    options.DescribeAllEnumsAsStrings();
-            //    options.SwaggerDoc("v1", new Swashbuckle.AspNetCore.Swagger.Info
-            //    {
-            //        Title = "eShopOnContainers - Catalog HTTP API",
-            //        Version = "v1",
-            //        Description = "The Catalog Microservice HTTP API. This is a Data-Driven/CRUD microservice sample",
-            //        TermsOfService = "Terms Of Service"
-            //    });
-            //});
+            services.AddSwaggerGen(options =>
+            {
+                options.DescribeAllEnumsAsStrings();
+                options.SwaggerDoc("v1", new Swashbuckle.AspNetCore.Swagger.Info
+                {
+                    Title = "Smart Wasl Home - Home Appliance HTTP API",
+                    Version = "v1",
+                    Description = "The Home Appliance Microservice HTTP API. This is a Data-Driven/CRUD microservice sample",
+                    TermsOfService = "Terms Of Service"
+                });
+            });
 
             //services.ConfigureSwaggerGen(swaggerGen =>
             //{
@@ -110,7 +99,7 @@ namespace Smart.Wasl.Homes.Services.HomeAppliances
                options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"))
             );
 
-
+            
             return services.BuildServiceProvider();
         }
 
@@ -120,8 +109,8 @@ namespace Smart.Wasl.Homes.Services.HomeAppliances
         {
             loggerFactory.AddConsole(Configuration.GetSection("Logging"));
             loggerFactory.AddDebug();
-            loggerFactory.AddAzureWebAppDiagnostics();
-            loggerFactory.AddApplicationInsights(app.ApplicationServices, LogLevel.Trace);
+            //loggerFactory.AddAzureWebAppDiagnostics();
+            //loggerFactory.AddApplicationInsights(app.ApplicationServices, LogLevel.Trace);
 
             var pbase = Configuration["PATH_BASE"];
             if (!string.IsNullOrEmpty(pbase))
@@ -144,8 +133,8 @@ namespace Smart.Wasl.Homes.Services.HomeAppliances
             app.UseStaticFiles();
             //app.UseByPassAuth();
             app.UseAuthentication();
-
-
+          
+          
 
             app.UseSwagger()
            .UseSwaggerUI(c =>

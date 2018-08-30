@@ -39,12 +39,14 @@ namespace Smart.Wasl.Homes.Services.HomeAppliances.Data.Repositries
             return await CommitChangesAsync();
         }
         public async Task<ContactType> GetContactTypeById(int paraContactTypeId)
-        {
+        => await DbContext
+           .Set<ContactType>()
+           .FirstOrDefaultAsync(item => item.Id == paraContactTypeId);
 
-            Contact local_Contact = await DbContext.Set<Contact>()
-                                    .FirstOrDefaultAsync(item => item.Id == paraContactTypeId);
-            return (await GetContactTypeById(local_Contact.ContactTypeId));
-        }
+        public async Task<IEnumerable<ContactType>> GetAll()
+          => await DbContext
+             .Set<ContactType>()
+             .ToListAsync();
 
     }
 }

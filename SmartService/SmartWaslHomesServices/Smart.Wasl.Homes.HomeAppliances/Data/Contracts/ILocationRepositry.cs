@@ -18,5 +18,6 @@ namespace Smart.Wasl.Homes.Services.HomeAppliances.Data.Contracts
 
         Task<Location> GetLocationById(int paraLocationId);
 
+        Task<IEnumerable<Location>> GetAll();
     }
 }

@@ -18,8 +18,9 @@ namespace Smart.Wasl.Homes.Services.HomeAppliances.Data.Contracts
         Task<Int32> DeleteApplianceActioneAsync(ApplianceAction paraentity);
 
         Task<ApplianceAction> GetApplianceActionById(int paraApplianceActionId);
-       
 
-   
+        Task<IEnumerable<ApplianceAction>> GetAll();
+
+
     }
 }

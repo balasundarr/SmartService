@@ -35,11 +35,17 @@ namespace Smart.Wasl.Homes.Services.HomeAppliances.Domain.Repositries
 
             return await CommitChangesAsync();
         }
+      
         public async Task<State> GetStateById(int paraStateId)
          => await DbContext
                 .Set<State>()
                 .FirstOrDefaultAsync(item => item.Id == paraStateId);
-               
+
+        public async Task<IEnumerable<State>> GetAll()
+            => await DbContext
+                .Set<State>()
+                .ToListAsync();
+
         public async Task<Country> GetCountryById(int paraStateId)
         {
             State local_State = await DbContext.Set<State>().FirstOrDefaultAsync(item => item.Id == paraStateId);

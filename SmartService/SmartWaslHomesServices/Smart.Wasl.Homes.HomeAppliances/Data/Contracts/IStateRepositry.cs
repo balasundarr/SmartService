@@ -19,5 +19,6 @@ namespace Smart.Wasl.Homes.Services.HomeAppliances.Data.Contracts
 
         Task<Country> GetCountryById(int paraStateId);
 
+        Task<IEnumerable<State>> GetAll();
     }
 }

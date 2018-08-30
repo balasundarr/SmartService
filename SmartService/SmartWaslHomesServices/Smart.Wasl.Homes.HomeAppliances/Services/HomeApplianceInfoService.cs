@@ -23,6 +23,10 @@ namespace Smart.Wasl.Homes.Services.HomeAppliances.Services
             return (await InfoRespositry.GetObjectsById( paraId,paraentity));
         }
 
+        public async Task<IEnumerable<IEntity>> GetAll(String paramName)
+        {
+            return (await InfoRespositry.GetAll(paramName));
+        }
         public Task<IEntity> GetLocationById(int paraId, IEntity paraEntity)
         {
             throw new NotImplementedException();

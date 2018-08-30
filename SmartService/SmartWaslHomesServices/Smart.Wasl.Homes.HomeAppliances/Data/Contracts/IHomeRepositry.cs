@@ -16,6 +16,8 @@ namespace Smart.Wasl.Homes.Services.HomeAppliances.Data.Contracts
 
         Task<Home> GetHomeById(int paraHomeId);
 
+        Task<IEnumerable<Home>> GetAll();
+
         Task<IEnumerable<Address>> GetAddresssById(int paraHomeId);
 
         Task<IEnumerable<Contact>> GetContactsById(int paraHomeId);
@@ -23,5 +25,7 @@ namespace Smart.Wasl.Homes.Services.HomeAppliances.Data.Contracts
         Task<IEnumerable<HomeAreaType>> GetHomeAreaTypesById(int paraHomeId);
 
         Task<Location> GetLocationById(int paraHomeId);
+
+ 
     }
 }

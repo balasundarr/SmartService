@@ -44,6 +44,11 @@ namespace Smart.Wasl.Homes.Services.HomeAppliances.Domain.Repositries
               .Set<Appliance>()
                 .FirstOrDefaultAsync(item => item.Id == paraApplianceId);
 
+        public async Task<IEnumerable<Appliance>> GetAll()
+            => await DbContext
+                .Set<Appliance>()
+                .ToListAsync();
+
         public async Task<HomeAreaType> GetApplianceHomeAreaTypeById(int paraApplianceId)
         {
             Appliance local_Appliance = await DbContext

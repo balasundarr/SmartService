@@ -44,6 +44,11 @@ namespace Smart.Wasl.Homes.Services.HomeAppliances.Domain.Repositries
                .Set<Contact>()
                .FirstOrDefaultAsync(item => item.Id == paraContactId);
 
+        public async Task<IEnumerable<Contact>> GetAll()
+             => await DbContext
+                .Set<Contact>()
+                .ToListAsync();
+
         public async Task<ICollection<Address>> GetContactAddressById(int paraContactId)
         {
             Contact local_Contact = await DbContext.Set<Contact>().FirstOrDefaultAsync(item => item.Id == paraContactId);

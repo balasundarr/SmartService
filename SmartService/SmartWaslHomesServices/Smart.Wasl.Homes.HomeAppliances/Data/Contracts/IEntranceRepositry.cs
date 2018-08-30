@@ -16,5 +16,7 @@ namespace Smart.Wasl.Homes.Services.HomeAppliances.Data.Contracts
         Task<Int32> DeleteEntranceAsync(Entrance paraentity);
 
         Task<Entrance> GetEntranceById(int paraEntranceId);
+
+        Task<IEnumerable<Entrance>> GetAll();
     }
 }
