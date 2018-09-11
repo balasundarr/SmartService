@@ -9,13 +9,13 @@ namespace Smart.Wasl.Homes.Services.HomeAppliances.Data.Contracts
 {
     public interface IContactTypeRepositry : IRepository
     {
-        Task<Int32> AddContactTypeAsync(ContactType paraentity);
+        Task<Int32> AddContactTypeAsync(ContactType paramEntity);
 
-        Task<Int32> UpdateContactTypeAsync(ContactType parachanges);
+        Task<Int32> UpdateContactTypeAsync(ContactType paramChanges);
 
-        Task<Int32> DeleteContactTypeAsync(ContactType paraentity);
+        Task<Int32> DeleteContactTypeAsync(ContactType paramEntity);
 
-        Task<ContactType> GetContactTypeById(int paraContactTypeId);
+        Task<ContactType> GetContactTypeById(int paramContactTypeId);
 
         Task<IEnumerable<ContactType>> GetAll();
     }

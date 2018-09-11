@@ -159,12 +159,12 @@ namespace Smart.Wasl.Homes.Services.HomeAppliances.Services
             }
             throw new NotImplementedException();
         }
-        public Task<IEntity> GetLocationById(int paramId, IEntity paraentity)
+        public Task<IEntity> GetLocationById(int paramId, IEntity paramEntity)
         {
             throw new NotImplementedException();
         }
 
-        public IQueryable<IEntity> GetHomeAppliancesObjets(int paraObjectId, IEntity paraentity)
+        public IQueryable<IEntity> GetHomeAppliancesObjets(int paraObjectId, IEntity paramEntity)
         {
             throw new NotImplementedException();
         }

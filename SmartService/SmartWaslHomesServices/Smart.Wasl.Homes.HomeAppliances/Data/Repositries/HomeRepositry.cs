@@ -18,53 +18,53 @@ namespace Smart.Wasl.Homes.Services.HomeAppliances.Domain.Repositries
         {
         }
 
-        public async Task<int> AddHomeAsync(Home paraentity)
+        public async Task<int> AddHomeAsync(Home paramEntity)
         {
-            Add(paraentity);
+            Add(paramEntity);
 
             return await CommitChangesAsync();
         }
 
-        public async Task<int> UpdateHomeAsync(Home parachanges)
+        public async Task<int> UpdateHomeAsync(Home paramChanges)
         {
-            Update(parachanges);
+            Update(paramChanges);
 
             return await CommitChangesAsync();
         }
 
-        public async Task<int> DeleteHomeAsync(Home paraentity)
+        public async Task<int> DeleteHomeAsync(Home paramEntity)
         {
-            Remove(paraentity);
+            Remove(paramEntity);
 
             return await CommitChangesAsync();
         }
         
-        public async Task<Home> GetHomeById(int paraHomeId)
+        public async Task<Home> GetHomeById(int paramHomeId)
             => await DbContext
                 .Set<Home>()
-                .FirstOrDefaultAsync(item => item.Id == paraHomeId);
+                .FirstOrDefaultAsync(item => item.Id == paramHomeId);
 
         public async Task<IEnumerable<Home>> GetAll()
             => await DbContext
                 .Set<Home>()
                 .ToListAsync();
 
-        public async Task<IEnumerable<Address>> GetAddresssById(int paraHomeId)
+        public async Task<IEnumerable<Address>> GetAddresssById(int paramHomeId)
           => await DbContext.Set<Address>().Include(a => a.Contact)
-                  .Where(item => item.Contact.HomeId == paraHomeId && item.Contact.ContactTypeId == 3)
+                  .Where(item => item.Contact.HomeId == paramHomeId && item.Contact.ContactTypeId == 3)
                   .ToListAsync();
 
-        public async Task<IEnumerable<Contact>>  GetContactsById(int paraHomeId)
+        public async Task<IEnumerable<Contact>>  GetContactsById(int paramHomeId)
          => await DbContext.Set<Contact>().Include(a => a.Home)
-                  .Where(item => item.Home.Id == paraHomeId).ToListAsync();
+                  .Where(item => item.Home.Id == paramHomeId).ToListAsync();
 
-        public async Task<IEnumerable<HomeAreaType>> GetHomeAreaTypesById(int paraHomeId)
+        public async Task<IEnumerable<HomeAreaType>> GetHomeAreaTypesById(int paramHomeId)
          => await DbContext.Set<HomeAreaType>().Include(a => a.Home).
-                  Where(item => item.Home.Id == paraHomeId).ToListAsync();
+                  Where(item => item.Home.Id == paramHomeId).ToListAsync();
 
-        public async Task<Location> GetLocationById(int paraHomeId)
+        public async Task<Location> GetLocationById(int paramHomeId)
         {
-            var local_Home = await DbContext.Set<Home>().FirstAsync(item => item.Id == paraHomeId);
+            var local_Home = await DbContext.Set<Home>().FirstAsync(item => item.Id == paramHomeId);
             return (await DbContext.Set<Location>().FirstAsync(item => item.Id == local_Home.LocationId));
 
         }

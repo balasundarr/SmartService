@@ -9,11 +9,11 @@ namespace Smart.Wasl.Homes.Services.HomeAppliances.Services.Interface
 {
     public interface IHomeApplianceManageService : IService
     {
-        Task<Int32> AddEntityAsync(IEntity paraentity);
+        Task<Int32> AddEntityAsync(IEntity paramEntity);
 
-        Task<Int32> UpdateEntityAsync(IEntity parachanges);
+        Task<Int32> UpdateEntityAsync(IEntity paramChanges);
 
-        Task<Int32> DeleteEntityAsync(IEntity paraentity);
+        Task<Int32> DeleteEntityAsync(IEntity paramEntity);
        
     }
 }

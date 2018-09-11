@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace SSmart.Wasl.Homes.Clients.Core.Validations
+namespace Smart.Wasl.Homes.Clients.Core.Validations
 {
     public class EmailRule : IValidationRule<string>
     {

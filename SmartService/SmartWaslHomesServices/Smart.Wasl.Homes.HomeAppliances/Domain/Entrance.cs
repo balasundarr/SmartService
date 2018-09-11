@@ -14,9 +14,9 @@ namespace Smart.Wasl.Homes.Services.HomeAppliances.Domain
         {
         }
 
-        public Entrance(int paraEntranceId)
+        public Entrance(int paramEntranceId)
         {
-            Id = paraEntranceId;
+            Id = paramEntranceId;
         }
 
         public int Id { get; set; }

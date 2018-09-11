@@ -17,52 +17,52 @@ namespace Smart.Wasl.Homes.Services.HomeAppliances.Domain.Repositries
           : base(parauserInfo, paradbContext)
         {
         }
-        public async Task<Int32> AddHomeAreaTypeAsync(HomeAreaType paraentity)
+        public async Task<Int32> AddHomeAreaTypeAsync(HomeAreaType paramEntity)
         {
-            Add(paraentity);
+            Add(paramEntity);
 
             return await CommitChangesAsync();
         }
-        public async Task<Int32> UpdateHomeAreaTypeAsync(HomeAreaType parachanges)
+        public async Task<Int32> UpdateHomeAreaTypeAsync(HomeAreaType paramChanges)
         {
-            Update(parachanges);
+            Update(paramChanges);
 
             return await CommitChangesAsync();
         }
-        public async Task<Int32> DeleteHomeAreaTypeAsync(HomeAreaType paraentity)
+        public async Task<Int32> DeleteHomeAreaTypeAsync(HomeAreaType paramEntity)
         {
-            Remove(paraentity);
+            Remove(paramEntity);
 
             return await CommitChangesAsync();
         }
 
-        public async Task<HomeAreaType> GetHomeAreaTypeById(int paraHomeAreaTypeId)
+        public async Task<HomeAreaType> GetHomeAreaTypeById(int paramHomeAreaTypeId)
             => await DbContext
                 .Set<HomeAreaType>()
-                .FirstOrDefaultAsync(item => item.Id == paraHomeAreaTypeId);
+                .FirstOrDefaultAsync(item => item.Id == paramHomeAreaTypeId);
 
         public async Task<IEnumerable<HomeAreaType>> GetAll()
           => await DbContext
               .Set<HomeAreaType>()
               .ToListAsync();
 
-        public async Task<IEnumerable<Appliance>> GetAppliancesById(int paraHomeAreaTypeId)
+        public async Task<IEnumerable<Appliance>> GetAppliancesById(int paramHomeAreaTypeId)
         {
 
-            var homeareatype = await DbContext.Set<HomeAreaType>().FirstAsync(item => item.Id == paraHomeAreaTypeId);
+            var homeareatype = await DbContext.Set<HomeAreaType>().FirstAsync(item => item.Id == paramHomeAreaTypeId);
             return (await DbContext.Set<Appliance>()
-                 .Where(item => item.HomeAreaTypeId == paraHomeAreaTypeId)
+                 .Where(item => item.HomeAreaTypeId == paramHomeAreaTypeId)
                 .ToListAsync());
         }
 
-        public async Task<RoomCoordinate> GetHomeAreaTypeRoomCoordinateById(int paraHomeAreaTypeId)
+        public async Task<RoomCoordinate> GetHomeAreaTypeRoomCoordinateById(int paramHomeAreaTypeId)
         => await DbContext
                 .Set<RoomCoordinate>()
-                .FirstOrDefaultAsync(item => item.HomeAreaTypeId == paraHomeAreaTypeId);
+                .FirstOrDefaultAsync(item => item.HomeAreaTypeId == paramHomeAreaTypeId);
 
-        public async Task<IEnumerable<Entrance>> GetEntranceByyId(int paraHomeAreaTypeId)
+        public async Task<IEnumerable<Entrance>> GetEntranceByyId(int paramHomeAreaTypeId)
         =>   await DbContext.Set<Entrance>()
-                .Where(item => item.HomeAreaTypeId == paraHomeAreaTypeId)
+                .Where(item => item.HomeAreaTypeId == paramHomeAreaTypeId)
                 .ToListAsync();
     }
     

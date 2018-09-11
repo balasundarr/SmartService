@@ -9,11 +9,11 @@ namespace Smart.Wasl.Homes.Services.HomeAppliances.Data.Contracts
 {
     public interface IStateRepositry : IRepository
     {
-        Task<Int32> AddStateAsync(State paraentity);
+        Task<Int32> AddStateAsync(State paramEntity);
 
-        Task<Int32> UpdateStateAsync(State parachanges);
+        Task<Int32> UpdateStateAsync(State paramChanges);
 
-        Task<Int32> DeleteStateAsync(State paraentity);
+        Task<Int32> DeleteStateAsync(State paramEntity);
 
         Task<State> GetStateById(int paraStateId);
 

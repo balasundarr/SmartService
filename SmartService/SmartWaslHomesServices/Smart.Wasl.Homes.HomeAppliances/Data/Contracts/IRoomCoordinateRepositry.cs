@@ -10,11 +10,11 @@ namespace Smart.Wasl.Homes.Services.HomeAppliances.Data.Contracts
 {
     public interface IRoomCoordinateRepositry : IRepository
     {
-        Task<Int32> AddRoomCoordinateAsync(RoomCoordinate paraentity);
+        Task<Int32> AddRoomCoordinateAsync(RoomCoordinate paramEntity);
 
-        Task<Int32> UpdateRoomCoordinateAsync(RoomCoordinate parachanges);
+        Task<Int32> UpdateRoomCoordinateAsync(RoomCoordinate paramChanges);
 
-        Task<Int32> DeleteRoomCoordinateAsync(RoomCoordinate paraentity);
+        Task<Int32> DeleteRoomCoordinateAsync(RoomCoordinate paramEntity);
 
         Task<RoomCoordinate> GetRoomCoordinateById(int paraRoomCoordinatId);
 

@@ -19,30 +19,30 @@ namespace Smart.Wasl.Homes.Services.HomeAppliances.Data.Repositries
         {
         }
 
-        public async Task<Int32> AddLocationAsync(Location paraentity)
+        public async Task<Int32> AddLocationAsync(Location paramEntity)
         {
-            Add(paraentity);
+            Add(paramEntity);
 
             return await CommitChangesAsync();
         }
 
-        public async Task<Int32> UpdateLocationAsync(Location parachanges)
+        public async Task<Int32> UpdateLocationAsync(Location paramChanges)
         {
-            Update(parachanges);
+            Update(paramChanges);
 
             return await CommitChangesAsync();
         }
 
-        public async Task<Int32> DeleteLocationAsync(Location paraentity)
+        public async Task<Int32> DeleteLocationAsync(Location paramEntity)
         {
-            Remove(paraentity);
+            Remove(paramEntity);
 
             return await CommitChangesAsync();
         }
-        public async Task<Location> GetLocationById(int paraLocatioId)
+        public async Task<Location> GetLocationById(int paramLocatioId)
          => await DbContext
                .Set<Location>()
-               .FirstOrDefaultAsync(item => item.Id == paraLocatioId);
+               .FirstOrDefaultAsync(item => item.Id == paramLocatioId);
 
         public async Task<IEnumerable<Location>> GetAll()
            => await DbContext

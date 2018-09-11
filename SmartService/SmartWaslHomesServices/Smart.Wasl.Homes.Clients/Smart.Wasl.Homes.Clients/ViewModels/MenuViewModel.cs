@@ -139,27 +139,14 @@ namespace Smart.Wasl.Homes.Clients.Core.ViewModels
 
         private Task RemoveUserCredentials()
         {
-            AppSettings.HasBooking = false;
+            
 
             MessagingCenter.Send(this, MessengerKeys.CheckoutRequested);
 
             return _authenticationService.LogoutAsync();
         }
 
-        private void OnBookingRequested(Booking booking)
-        {
-            if (booking == null)
-            {
-                return;
-            }
-
-            SetMenuItemStatus(MenuItemType.MyRoom, true);
-        }
-
-        private void OnCheckoutRequested(object args)
-        {
-            SetMenuItemStatus(MenuItemType.MyRoom, false);
-        }
+       
 
         private void SetMenuItemStatus(MenuItemType type, bool enabled)
         {

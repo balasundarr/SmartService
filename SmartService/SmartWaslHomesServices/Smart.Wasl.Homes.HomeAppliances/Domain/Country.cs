@@ -12,9 +12,9 @@ namespace Smart.Wasl.Homes.Services.HomeAppliances.Domain
     {
 
 
-        public Country(int paraCountryTypeId)
+        public Country(int paramCountryTypeId)
         {
-            Id = paraCountryTypeId;
+            Id = paramCountryTypeId;
         }
 
         public Country()

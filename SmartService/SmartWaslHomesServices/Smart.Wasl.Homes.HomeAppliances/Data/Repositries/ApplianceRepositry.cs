@@ -18,53 +18,53 @@ namespace Smart.Wasl.Homes.Services.HomeAppliances.Domain.Repositries
         {
         }
 
-        public async Task<int> AddApplianceAsync(Appliance paraentity)
+        public async Task<int> AddApplianceAsync(Appliance paramEntity)
         {
-            Add(paraentity);
+            Add(paramEntity);
 
             return await CommitChangesAsync();
         }
 
-        public async Task<int> UpdateApplianceAsync(Appliance parachanges)
+        public async Task<int> UpdateApplianceAsync(Appliance paramChanges)
         {
-            Update(parachanges);
+            Update(paramChanges);
 
             return await CommitChangesAsync();
         }
 
-        public async Task<int> DeleteApplianceAsync(Appliance paraentity)
+        public async Task<int> DeleteApplianceAsync(Appliance paramEntity)
         {
-            Remove(paraentity);
+            Remove(paramEntity);
 
             return await CommitChangesAsync();
         }
 
-        public async Task<Appliance> GetApplianceById(int paraApplianceId)
+        public async Task<Appliance> GetApplianceById(int paramApplianceId)
             => await DbContext
               .Set<Appliance>()
-                .FirstOrDefaultAsync(item => item.Id == paraApplianceId);
+                .FirstOrDefaultAsync(item => item.Id == paramApplianceId);
 
         public async Task<IEnumerable<Appliance>> GetAll()
             => await DbContext
                 .Set<Appliance>()
                 .ToListAsync();
 
-        public async Task<HomeAreaType> GetApplianceHomeAreaTypeById(int paraApplianceId)
+        public async Task<HomeAreaType> GetApplianceHomeAreaTypeById(int paramApplianceId)
         {
             Appliance local_Appliance = await DbContext
                 .Set<Appliance>()
-                .FirstOrDefaultAsync(item => item.Id == paraApplianceId);
+                .FirstOrDefaultAsync(item => item.Id == paramApplianceId);
             return (await DbContext
                 .Set<HomeAreaType>()
                 .FirstOrDefaultAsync(item => item.Id == local_Appliance.HomeAreaTypeId));
 
         }
 
-        public async Task<ICollection<ApplianceAction>> GetApplianceActionById(int paraApplianceId)
+        public async Task<ICollection<ApplianceAction>> GetApplianceActionById(int paramApplianceId)
         {
             Appliance local_Appliance = await DbContext
                 .Set<Appliance>()
-                .FirstOrDefaultAsync(item => item.Id == paraApplianceId);
+                .FirstOrDefaultAsync(item => item.Id == paramApplianceId);
             return (await DbContext
                 .Set<ApplianceAction>()
                 .Where(item => item.Id == local_Appliance.ApplianceActionId)
@@ -72,17 +72,17 @@ namespace Smart.Wasl.Homes.Services.HomeAppliances.Domain.Repositries
 
         }
 
-        public async  Task<ICollection<Contact>> GetApplianceContactsById(int paraApplianceId)
+        public async  Task<ICollection<Contact>> GetApplianceContactsById(int paramApplianceId)
             => await DbContext
                     .Set<Contact>()
-                    .Where(item => item.ApplianceId == paraApplianceId)
+                    .Where(item => item.ApplianceId == paramApplianceId)
                     .ToListAsync();
 
-        public async Task<Location> GetApplianceLocationById(int paraApplianceId)
+        public async Task<Location> GetApplianceLocationById(int paramApplianceId)
         {
             Appliance local_Appliance = await DbContext
                 .Set<Appliance>()
-                .FirstOrDefaultAsync(item => item.Id == paraApplianceId);
+                .FirstOrDefaultAsync(item => item.Id == paramApplianceId);
 
             return (await DbContext
             .Set<Location>()

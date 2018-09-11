@@ -11,9 +11,9 @@ namespace Smart.Wasl.Homes.Services.HomeAppliances.Domain
     {
  
        
-        public Contact(int paraContactId)
+        public Contact(int paramContactId)
         {
-            Id = paraContactId;
+            Id = paramContactId;
         }
         public Contact()
         {

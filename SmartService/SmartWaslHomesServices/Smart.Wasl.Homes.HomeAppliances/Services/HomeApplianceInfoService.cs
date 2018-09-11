@@ -14,26 +14,26 @@ namespace Smart.Wasl.Homes.Services.HomeAppliances.Services
 {
     public class HomeApplianceInfoService : Service, IHomeApplianceInfoService
     {
-        public HomeApplianceInfoService(ILogger<HomeApplianceInfoService> paralogger, IUserInfo parauserInfo, HomeAppliancesContext paradbContext)
-             : base(paralogger, parauserInfo, paradbContext)
+        public HomeApplianceInfoService(ILogger<HomeApplianceInfoService> paramLogger, IUserInfo paramUserInfo, HomeAppliancesContext paramDbContext)
+             : base(paramLogger, paramUserInfo, paramDbContext)
         {
         }
-        public async Task<IEntity> GetObjectsById(int paraId, IEntity paraentity)
+        public async Task<IEntity> GetObjectsById(int paraId, IEntity paramEntity)
         {
-            return (await InfoRespositry.GetObjectsById( paraId,paraentity));
+            return (await InfoRespositry.GetObjectsById( paraId,paramEntity));
         }
 
         public async Task<IEnumerable<IEntity>> GetAll(String paramName)
         {
             return (await InfoRespositry.GetAll(paramName));
         }
-        public Task<IEntity> GetLocationById(int paraId, IEntity paraEntity)
+        public Task<IEntity> GetLocationById(int paraId, IEntity paramEntity)
         {
             throw new NotImplementedException();
         }
 
 
-        public Task<IEntity> GetHomeAppliancesObjets(int paraObjectId, IEntity paraEntity)
+        public Task<IEntity> GetHomeAppliancesObjets(int paramObjectId, IEntity paramEntity)
         {
             throw new NotImplementedException();
         }

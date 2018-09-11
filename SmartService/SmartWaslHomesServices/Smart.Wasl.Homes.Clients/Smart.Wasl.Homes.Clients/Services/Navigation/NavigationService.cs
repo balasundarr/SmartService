@@ -165,16 +165,12 @@ namespace Smart.Wasl.Homes.Clients.Core.Services.Navigation
 
         private void CreatePageViewModelMappings()
         {
-            _mappings.Add(typeof(BookingCalendarViewModel), typeof(BookingCalendarView));
-            _mappings.Add(typeof(BookingHotelViewModel), typeof(BookingHotelView));
-            _mappings.Add(typeof(BookingHotelsViewModel), typeof(BookingHotelsView));
-            _mappings.Add(typeof(BookingViewModel), typeof(BookingView));
-            _mappings.Add(typeof(CheckoutViewModel), typeof(CheckoutView));
+           
             _mappings.Add(typeof(LoginViewModel), typeof(LoginView));
             _mappings.Add(typeof(MainViewModel), typeof(MainView));
             _mappings.Add(typeof(MyRoomViewModel), typeof(MyRoomView));
             _mappings.Add(typeof(NotificationsViewModel), typeof(NotificationsView));
-            _mappings.Add(typeof(OpenDoorViewModel), typeof(OpenDoorView));
+        
             _mappings.Add(typeof(SettingsViewModel<RemoteSettings>), typeof(SettingsView));
             _mappings.Add(typeof(ExtendedSplashViewModel), typeof(ExtendedSplashView));
 

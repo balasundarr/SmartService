@@ -7,8 +7,8 @@ namespace Smart.Wasl.Homes.Services.HomeAppliances.Data.Contracts
 {
     public interface IHomeApplianceActionRepositry
     {
-        Task<String> GetApplianceState(int paraApplianceID);
+        Task<String> GetApplianceState(int paramApplianceID);
 
-        Task<Int32> SetApplianceAction(int paraApplianceID, string paraAction);
+        Task<Int32> SetApplianceAction(int paramApplianceID, string paramAction);
     }
 }

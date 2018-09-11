@@ -18,20 +18,20 @@ namespace Smart.Wasl.Homes.Services.HomeAppliances.Services
            : base(logger, userInfo, dbContext)
         {
         }
-        public async Task<Int32> AddEntityAsync(IEntity paraentity)
+        public async Task<Int32> AddEntityAsync(IEntity paramEntity)
         {
-            return (await HomeApplianceManageRepository.AddAEntityAsync(paraentity));
+            return (await HomeApplianceManageRepository.AddAEntityAsync(paramEntity));
 
         }
 
-        public async Task<int> UpdateEntityAsync(IEntity parachanges)
+        public async Task<int> UpdateEntityAsync(IEntity paramChanges)
         {
-            return (await HomeApplianceManageRepository.UpdateEntityAsync(parachanges));
+            return (await HomeApplianceManageRepository.UpdateEntityAsync(paramChanges));
         }
 
-        public async Task<int> DeleteEntityAsync(IEntity paraentity)
+        public async Task<int> DeleteEntityAsync(IEntity paramEntity)
         {
-            return (await HomeApplianceManageRepository.DeleteEntityAsync(paraentity));
+            return (await HomeApplianceManageRepository.DeleteEntityAsync(paramEntity));
         }
     }
 }

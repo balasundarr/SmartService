@@ -18,31 +18,31 @@ namespace Smart.Wasl.Homes.Services.HomeAppliances.Data.Repositries
         {
         }
 
-        public async Task<Int32> AddEntranceAsync(Entrance paraentity)
+        public async Task<Int32> AddEntranceAsync(Entrance paramEntity)
         {
-            Add(paraentity);
+            Add(paramEntity);
 
             return await CommitChangesAsync();
         }
 
-        public async Task<Int32> UpdateEntranceAsync(Entrance parachanges)
+        public async Task<Int32> UpdateEntranceAsync(Entrance paramChanges)
         {
-            Update(parachanges);
+            Update(paramChanges);
 
             return await CommitChangesAsync();
         }
 
-        public async Task<Int32> DeleteEntranceAsync(Entrance paraentity)
+        public async Task<Int32> DeleteEntranceAsync(Entrance paramEntity)
         {
-            Remove(paraentity);
+            Remove(paramEntity);
 
             return await CommitChangesAsync();
         }
 
-        public async Task<Entrance> GetEntranceById(int paraEntranceId)
+        public async Task<Entrance> GetEntranceById(int paramEntranceId)
             => await DbContext
                .Set<Entrance>()
-               .FirstOrDefaultAsync(item => item.Id == paraEntranceId);
+               .FirstOrDefaultAsync(item => item.Id == paramEntranceId);
 
         public async Task<IEnumerable<Entrance>> GetAll()
           => await DbContext

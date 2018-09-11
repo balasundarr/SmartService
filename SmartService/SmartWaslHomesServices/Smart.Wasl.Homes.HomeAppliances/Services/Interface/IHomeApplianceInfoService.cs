@@ -14,13 +14,13 @@ namespace Smart.Wasl.Homes.Services.HomeAppliances.Services.Interface
 {
     public interface IHomeApplianceInfoService : IService
     {
-        Task<IEntity> GetObjectsById(int paraId, IEntity paraEntity);
+        Task<IEntity> GetObjectsById(int paramId, IEntity paramEntity);
 
         Task<IEnumerable<IEntity>> GetAll(String paramName);
 
-        Task<IEntity> GetLocationById(int paraId, IEntity paraEntity);
+        Task<IEntity> GetLocationById(int paramId, IEntity paramEntity);
             
-        Task<IEntity> GetHomeAppliancesObjets(int paraObjectId, IEntity paraEntity);
+        Task<IEntity> GetHomeAppliancesObjets(int paramObjectId, IEntity paramEntity);
         
     }
 }

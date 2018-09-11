@@ -19,23 +19,23 @@ namespace Smart.Wasl.Homes.Services.HomeAppliances.Domain.Repositries
         {
         }
 
-        public async Task<int> AddAddressAsync(Address paraentity)
+        public async Task<int> AddAddressAsync(Address paramEntity)
         {
-            Add(paraentity);
+            Add(paramEntity);
 
             return await CommitChangesAsync();
         }
 
-        public async Task<int> UpdateAddressAsync(Address parachanges)
+        public async Task<int> UpdateAddressAsync(Address paramChanges)
         {
-            Update(parachanges);
+            Update(paramChanges);
 
             return await CommitChangesAsync();
         }
 
-        public async Task<int> DeleteAddressAsync(Address paraentity)
+        public async Task<int> DeleteAddressAsync(Address paramEntity)
         {
-            Remove(paraentity);
+            Remove(paramEntity);
 
             return await CommitChangesAsync();
         }

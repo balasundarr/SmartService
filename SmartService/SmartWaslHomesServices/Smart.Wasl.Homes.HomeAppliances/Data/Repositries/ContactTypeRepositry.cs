@@ -18,30 +18,30 @@ namespace Smart.Wasl.Homes.Services.HomeAppliances.Data.Repositries
         {
         }
         
-        public async Task<int> AddContactTypeAsync(ContactType paraentity)
+        public async Task<int> AddContactTypeAsync(ContactType paramEntity)
         {
-            Add(paraentity);
+            Add(paramEntity);
 
             return await CommitChangesAsync();
         }
 
-        public async Task<int> UpdateContactTypeAsync(ContactType parachanges)
+        public async Task<int> UpdateContactTypeAsync(ContactType paramChanges)
         {
-            Update(parachanges);
+            Update(paramChanges);
 
             return await CommitChangesAsync();
         }
 
-        public async Task<int> DeleteContactTypeAsync(ContactType paraentity)
+        public async Task<int> DeleteContactTypeAsync(ContactType paramEntity)
         {
-            Remove(paraentity);
+            Remove(paramEntity);
 
             return await CommitChangesAsync();
         }
-        public async Task<ContactType> GetContactTypeById(int paraContactTypeId)
+        public async Task<ContactType> GetContactTypeById(int paramContactTypeId)
         => await DbContext
            .Set<ContactType>()
-           .FirstOrDefaultAsync(item => item.Id == paraContactTypeId);
+           .FirstOrDefaultAsync(item => item.Id == paramContactTypeId);
 
         public async Task<IEnumerable<ContactType>> GetAll()
           => await DbContext

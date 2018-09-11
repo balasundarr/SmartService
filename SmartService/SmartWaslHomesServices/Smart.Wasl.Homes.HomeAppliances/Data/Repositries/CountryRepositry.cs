@@ -18,31 +18,31 @@ namespace Smart.Wasl.Homes.Services.HomeAppliances.Domain.Repositries
         {
         }
 
-        public async Task<Int32> AddCountryAsync(Country paraentity)
+        public async Task<Int32> AddCountryAsync(Country paramEntity)
         {
-            Add(paraentity);
+            Add(paramEntity);
 
             return await CommitChangesAsync();
         }
 
-        public async Task<Int32> UpdateCountryAsync(Country parachanges)
+        public async Task<Int32> UpdateCountryAsync(Country paramChanges)
         {
-            Update(parachanges);
+            Update(paramChanges);
 
             return await CommitChangesAsync();
         }
 
-        public async Task<Int32> DeleteCountryAsync(Country paraentity)
+        public async Task<Int32> DeleteCountryAsync(Country paramEntity)
         {
-            Remove(paraentity);
+            Remove(paramEntity);
 
             return await CommitChangesAsync();
         }
 
-        public async Task<Country> GetCountryById(int paraCountryId)
+        public async Task<Country> GetCountryById(int paramCountryId)
         => await DbContext
                .Set<Country>()
-               .FirstOrDefaultAsync(item => item.Id == paraCountryId);
+               .FirstOrDefaultAsync(item => item.Id == paramCountryId);
 
 
         public async Task<IEnumerable<Country>> GetAll()
@@ -50,10 +50,10 @@ namespace Smart.Wasl.Homes.Services.HomeAppliances.Domain.Repositries
                  .Set<Country>()
                  .ToListAsync();
 
-        public async Task<ICollection<State>> GetStatesById(int paraCountryId)
+        public async Task<ICollection<State>> GetStatesById(int paramCountryId)
           => await DbContext
                .Set<State>()
-               .Where(a => a.Countryid == paraCountryId).ToListAsync();
+               .Where(a => a.Countryid == paramCountryId).ToListAsync();
 
 
 

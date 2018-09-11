@@ -1,6 +1,6 @@
 ﻿using Smart.Wasl.Homes.Clients.Core.Models;
 using Smart.Wasl.Homes.Clients.Core.Services.Location;
-using Smart.Wasl.Homes.Clients.Core.Services.Suggestion;
+
 using Smart.Wasl.Homes.Clients.Core.ViewModels.Base;
 using System;
 using System.Collections.ObjectModel;
@@ -15,16 +15,10 @@ namespace Smart.Wasl.Homes.Clients.Core.ViewModels
         private ObservableCollection<CustomPin> _customPins;
         private ObservableCollection<Suggestion> _suggestions;
 
-        private readonly ISuggestionService _suggestionService;
+    
         private readonly ILocationService _locationService;
 
-        public SuggestionsViewModel(
-            ISuggestionService suggestionService, 
-            ILocationService locationService)
-        {
-            _suggestionService = suggestionService;
-            _locationService = locationService;
-        }
+       
 
         public ObservableCollection<CustomPin> CustomPins
         {

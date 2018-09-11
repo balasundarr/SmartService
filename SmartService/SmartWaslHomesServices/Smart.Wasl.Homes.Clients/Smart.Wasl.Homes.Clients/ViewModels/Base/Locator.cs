@@ -2,17 +2,16 @@
 using Autofac;
 using Smart.Wasl.Homes.Clients.Core.Services.Analytic;
 using Smart.Wasl.Homes.Clients.Core.Services.Authentication;
-using Smart.Wasl.Homes.Clients.Core.Services.Booking;
 using Smart.Wasl.Homes.Clients.Core.Services.Chart;
 using Smart.Wasl.Homes.Clients.Core.Services.Dialog;
-using Smart.Wasl.Homes.Clients.Core.Services.Hotel;
+
 using Smart.Wasl.Homes.Clients.Core.Services.Location;
 using Smart.Wasl.Homes.Clients.Core.Services.Navigation;
 using Smart.Wasl.Homes.Clients.Core.Services.Notification;
 using Smart.Wasl.Homes.Clients.Core.Services.OpenUri;
 using Smart.Wasl.Homes.Clients.Core.Services.Request;
 using Smart.Wasl.Homes.Clients.Core.Services.Settings;
-using Smart.Wasl.Homes.Clients.Core.Services.Suggestion;
+
 using Smart.Wasl.Homes.Clients.Core.Models;
 
 namespace Smart.Wasl.Homes.Clients.Core.ViewModels.Base
@@ -50,24 +49,18 @@ namespace Smart.Wasl.Homes.Clients.Core.ViewModels.Base
 
             if (AppSettings.UseFakes)
             {
-                _containerBuilder.RegisterType<FakeBookingService>().As<IBookingService>();
-                _containerBuilder.RegisterType<FakeHotelService>().As<IHotelService>();
+            
                 _containerBuilder.RegisterType<FakeNotificationService>().As<INotificationService>();
-                _containerBuilder.RegisterType<FakeSuggestionService>().As<ISuggestionService>();
+              
             }
             else
             {
-                _containerBuilder.RegisterType<BookingService>().As<IBookingService>();
-                _containerBuilder.RegisterType<HotelService>().As<IHotelService>();
+              
                 _containerBuilder.RegisterType<NotificationService>().As<INotificationService>();
-                _containerBuilder.RegisterType<SuggestionService>().As<ISuggestionService>();
+                
             }
 
-            _containerBuilder.RegisterType<BookingCalendarViewModel>();
-            _containerBuilder.RegisterType<BookingHotelViewModel>();
-            _containerBuilder.RegisterType<BookingHotelsViewModel>();
-            _containerBuilder.RegisterType<BookingViewModel>();
-            _containerBuilder.RegisterType<CheckoutViewModel>();
+          
             _containerBuilder.RegisterType<HomeViewModel>();
             _containerBuilder.RegisterType<LoginViewModel>();
             _containerBuilder.RegisterType<MainViewModel>();

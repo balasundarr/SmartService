@@ -20,20 +20,6 @@ namespace Smart.Wasl.Homes.Services.HomeAppliances.Services
         protected HomeApplianceInfoRepositry HomeApplianceInfoRepositry;
         protected HomeApplianceManageRepository HomeApplianceManageRepository;
 
-        //protected IAddressRepositry AddressRepositry;
-        //protected IApplianceActionRepositry ApplianceActionRepositry;
-        //protected IApplianceRepositry ApplianceRepositryry;
-        //protected ICityRepositry CityRepositr;
-        //protected IContactRepositry IContactRepositry;
-        //protected IContactTypeRepositry ContactTypeRepositryy;
-        //protected ICountryRepositry CountryRepositry;
-        //protected IEntranceRepositry EntranceRepositr;
-        //protected IHomeAreaTypeRepositry HomeAreaTypeRepositry;
-        //protected IHomeRepositry HomeRepositry;
-        //protected ILocationRepositry LocationRepositry;
-        //protected IRoomCoordinateRepositry RoomCoordinateRepositry;
-        //protected IStateRepositry StateRepositry;
-
         public Service(ILogger logger, IUserInfo userInfo, HomeAppliancesContext dbContext)
         {
             Logger = logger;

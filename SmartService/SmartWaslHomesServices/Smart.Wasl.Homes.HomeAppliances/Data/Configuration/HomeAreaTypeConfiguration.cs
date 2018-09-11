@@ -11,39 +11,39 @@ namespace Smart.Wasl.Homes.Services.HomeAppliances.Data.Configuration
 {
     public class HomeAreaTypeConfiguration : IEntityTypeConfiguration<HomeAreaType>
     {
-        public void Configure(EntityTypeBuilder<HomeAreaType> parabuilder)
+        public void Configure(EntityTypeBuilder<HomeAreaType> paramBuilder)
         {
             //Primary Table
-            parabuilder.ToTable("HomeAreaType");
+            paramBuilder.ToTable("HomeAreaType");
 
             // Set key for entity
-            parabuilder.HasKey(p => p.Id);
+            paramBuilder.HasKey(p => p.Id);
 
             // Set identity for entity (auto increment)
-            parabuilder.Property(p => p.Id).UseSqlServerIdentityColumn();
+            paramBuilder.Property(p => p.Id).UseSqlServerIdentityColumn();
 
             // Set mapping for columns
-            parabuilder.Property(p => p.Id).HasColumnType("int").IsRequired();
-            parabuilder.Property(p => p.Name).HasColumnType("varchar(255)").IsRequired();
-            parabuilder.Property(p => p.Description).HasColumnType("varchar(255)").IsRequired();
-            
-            parabuilder.Property(p => p.HomeId).HasColumnType("int").IsRequired();
-            parabuilder.Property(p => p.RoomCoordinateId).HasColumnType("int").IsRequired();
-          
-            parabuilder.Property(p => p.CreationUser).HasColumnType("varchar(25)").IsRequired();
-            parabuilder.Property(p => p.CreationDateTime).HasColumnType("datetime").IsRequired();
-            parabuilder.Property(p => p.LastUpdateUser).HasColumnType("varchar(25)");
-            parabuilder.Property(p => p.LastUpdateDateTime).HasColumnType("datetime");
+            paramBuilder.Property(p => p.Id).HasColumnType("int").IsRequired();
+            paramBuilder.Property(p => p.Name).HasColumnType("varchar(255)").IsRequired();
+            paramBuilder.Property(p => p.Description).HasColumnType("varchar(255)").IsRequired();
+
+            paramBuilder.Property(p => p.HomeId).HasColumnType("int").IsRequired();
+            paramBuilder.Property(p => p.RoomCoordinateId).HasColumnType("int").IsRequired();
+
+            paramBuilder.Property(p => p.CreationUser).HasColumnType("varchar(25)").IsRequired();
+            paramBuilder.Property(p => p.CreationDateTime).HasColumnType("datetime").IsRequired();
+            paramBuilder.Property(p => p.LastUpdateUser).HasColumnType("varchar(25)");
+            paramBuilder.Property(p => p.LastUpdateDateTime).HasColumnType("datetime");
 
             // Set concurrency token for entity
-            parabuilder.Property(p => p.Timestamp).ValueGeneratedOnAddOrUpdate().IsConcurrencyToken();
+            paramBuilder.Property(p => p.Timestamp).ValueGeneratedOnAddOrUpdate().IsConcurrencyToken();
 
             //// Add configuration for foreign keys
-            //parabuilder.HasMany(p => p.Appliance).WithOne(e => e.HomeAreAType_Appliance);
-            //parabuilder.HasOne(p => p.Location).WithOne(p => p.HomeAreaType_Location).HasForeignKey<Location>(p => p.Id);
-            //parabuilder.HasOne(p => p.RoomCoordinate).WithOne(p => p.Home_RoomCoordinate).HasForeignKey<Location>(p => p.Id);
+            //paramBuilder.HasMany(p => p.Appliance).WithOne(e => e.HomeAreAType_Appliance);
+            //paramBuilder.HasOne(p => p.Location).WithOne(p => p.HomeAreaType_Location).HasForeignKey<Location>(p => p.Id);
+            //paramBuilder.HasOne(p => p.RoomCoordinate).WithOne(p => p.Home_RoomCoordinate).HasForeignKey<Location>(p => p.Id);
 
-           
+
         }
     }
 }

@@ -9,23 +9,23 @@ namespace Smart.Wasl.Homes.Services.HomeAppliances.Data.Contracts
 {
     public interface IApplianceRepositry : IRepository
     {
-        Task<Int32> AddApplianceAsync(Appliance paraentity);
+        Task<Int32> AddApplianceAsync(Appliance paramEntity);
 
-        Task<Int32> UpdateApplianceAsync(Appliance parachanges);
+        Task<Int32> UpdateApplianceAsync(Appliance paranChanges);
 
-        Task<Int32> DeleteApplianceAsync(Appliance paraentity);
+        Task<Int32> DeleteApplianceAsync(Appliance paramEntity);
 
-        Task<Appliance> GetApplianceById(int paraApplianceId);
+        Task<Appliance> GetApplianceById(int paramApplianceId);
 
         Task<IEnumerable<Appliance>> GetAll();
 
-        Task<HomeAreaType> GetApplianceHomeAreaTypeById(int paraApplianceId);
+        Task<HomeAreaType> GetApplianceHomeAreaTypeById(int paramApplianceId);
 
-        Task<ICollection<ApplianceAction>> GetApplianceActionById(int paraApplianceId);
+        Task<ICollection<ApplianceAction>> GetApplianceActionById(int paramApplianceId);
 
-        Task<ICollection<Contact>> GetApplianceContactsById(int paraApplianceId);
+        Task<ICollection<Contact>> GetApplianceContactsById(int paramApplianceId);
 
-        Task<Location> GetApplianceLocationById(int paraApplianceId);
+        Task<Location> GetApplianceLocationById(int paramApplianceId);
         
     }
 }

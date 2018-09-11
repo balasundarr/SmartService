@@ -8,10 +8,10 @@ namespace Smart.Wasl.Homes.Services.HomeAppliances.Data.Contracts
 {
     public interface IHomeApplianceManageRepository
     {
-        Task<Int32> AddAEntityAsync(IEntity paraentity);
+        Task<Int32> AddAEntityAsync(IEntity paramentity);
 
-        Task<Int32> UpdateEntityAsync(IEntity parachanges);
+        Task<Int32> UpdateEntityAsync(IEntity paramChanges);
 
-        Task<Int32> DeleteEntityAsync(IEntity paraentity);
+        Task<Int32> DeleteEntityAsync(IEntity paramEntity);
     }
 }

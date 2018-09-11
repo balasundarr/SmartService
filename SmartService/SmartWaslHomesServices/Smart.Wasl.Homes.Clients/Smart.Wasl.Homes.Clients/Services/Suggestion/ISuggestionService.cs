@@ -1,7 +1,7 @@
 ﻿using System.Collections.ObjectModel;
 using System.Threading.Tasks;
 
-namespace Smart.Wasl.Homes.Clients.Core.Services.Settings
+namespace SmartHotel.Clients.Core.Services.Suggestion
 {
     public interface ISuggestionService
     {

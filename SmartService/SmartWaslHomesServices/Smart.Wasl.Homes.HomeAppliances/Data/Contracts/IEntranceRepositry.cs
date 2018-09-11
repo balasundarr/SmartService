@@ -9,13 +9,13 @@ namespace Smart.Wasl.Homes.Services.HomeAppliances.Data.Contracts
 {
     public interface IEntranceRepositry : IRepository
     {
-        Task<Int32> AddEntranceAsync(Entrance paraentity);
+        Task<Int32> AddEntranceAsync(Entrance paramEntity);
 
-        Task<Int32> UpdateEntranceAsync(Entrance parachanges);
+        Task<Int32> UpdateEntranceAsync(Entrance paramChanges);
 
-        Task<Int32> DeleteEntranceAsync(Entrance paraentity);
+        Task<Int32> DeleteEntranceAsync(Entrance paramEntity);
 
-        Task<Entrance> GetEntranceById(int paraEntranceId);
+        Task<Entrance> GetEntranceById(int paramEntranceId);
 
         Task<IEnumerable<Entrance>> GetAll();
     }

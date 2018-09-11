@@ -11,9 +11,9 @@ namespace Smart.Wasl.Homes.Services.HomeAppliances.Domain
     public class Appliance : IAuditableEntity
     {
        
-        public Appliance(int paraApplianceId)
+        public Appliance(int paramApplianceId)
         {
-            Id = paraApplianceId;
+            Id = paramApplianceId;
         }
 
         public Appliance()

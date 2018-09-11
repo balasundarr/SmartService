@@ -10,6 +10,6 @@ namespace Smart.Wasl.Homes.Services.HomeAppliances.Services.Interface
 {
     public interface IHomeApplianceActionService : IService
     {
-        Task<IEntity> GetAction(int paraentity);
+        Task<IEntity> GetAction(int paramEntity);
     }
 }

@@ -1,6 +1,6 @@
 ﻿using Smart.Wasl.Homes.Clients.Core.Models;
 using Smart.Wasl.Homes.Clients.Core.Services.Authentication;
-using Smart.Wasl.Homes.Clients.Core.Services.Booking;
+
 using Smart.Wasl.Homes.Clients.Core.Services.Chart;
 using Smart.Wasl.Homes.Clients.Core.Services.Notification;
 using Smart.Wasl.Homes.Clients.Core.ViewModels.Base;
@@ -22,13 +22,13 @@ namespace Smart.Wasl.Homes.Clients.Core.ViewModels
 
         private readonly INotificationService _notificationService;
         private readonly IChartService _chartService;
-        private readonly IBookingService _bookingService;
+
         private readonly IAuthenticationService _authenticationService;
 
         public HomeViewModel(
             INotificationService notificationService,
             IChartService chartService,
-            IBookingService bookingService,
+
             IAuthenticationService authenticationService)
         {
             _notificationService = notificationService;
@@ -164,20 +164,6 @@ namespace Smart.Wasl.Homes.Clients.Core.ViewModels
             }
             return Task.FromResult(true);
         }
-
-        private void OnBookingRequested(Booking booking)
-        {
-            if (booking == null)
-            {
-                return;
-            }
-
-            HasBooking = true;
-        }
-
-        private void OnCheckoutRequested(object args)
-        {
-            HasBooking = false;
-        }
     }
+      
 }

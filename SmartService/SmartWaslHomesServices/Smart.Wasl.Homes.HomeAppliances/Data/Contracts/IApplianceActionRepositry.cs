@@ -11,13 +11,13 @@ namespace Smart.Wasl.Homes.Services.HomeAppliances.Data.Contracts
     public interface IApplianceActionRepositry : IRepository
     {
 
-        Task<Int32> AddApplianceActioneAsync(ApplianceAction paraentity);
+        Task<Int32> AddApplianceActioneAsync(ApplianceAction paramEntity);
 
-        Task<Int32> UpdateApplianceActionAsync(ApplianceAction parachanges);
+        Task<Int32> UpdateApplianceActionAsync(ApplianceAction paramChanges);
 
-        Task<Int32> DeleteApplianceActioneAsync(ApplianceAction paraentity);
+        Task<Int32> DeleteApplianceActioneAsync(ApplianceAction paramEntity);
 
-        Task<ApplianceAction> GetApplianceActionById(int paraApplianceActionId);
+        Task<ApplianceAction> GetApplianceActionById(int paramApplianceActionId);
 
         Task<IEnumerable<ApplianceAction>> GetAll();
 

@@ -14,11 +14,11 @@ namespace Smart.Wasl.Homes.Services.HomeAppliances.Services
 {
     public class HomeApplianceActionService : Service , IHomeApplianceActionService
     {
-        public HomeApplianceActionService(ILogger<HomeApplianceActionService> paralogger, IUserInfo parauserInfo, HomeAppliancesContext paradbContext)
-            : base(paralogger, parauserInfo, paradbContext)
+        public HomeApplianceActionService(ILogger<HomeApplianceActionService> paramLogger, IUserInfo paramUserInfo, HomeAppliancesContext paramDbContext)
+            : base(paramLogger, paramUserInfo, paramDbContext)
         {
         }
-        public Task<IEntity> GetAction(int paraentity)
+        public Task<IEntity> GetAction(int paramEntity)
         {
             throw new NotFiniteNumberException();
         }

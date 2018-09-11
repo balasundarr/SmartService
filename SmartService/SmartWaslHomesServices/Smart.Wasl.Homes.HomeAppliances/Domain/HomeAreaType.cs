@@ -11,9 +11,9 @@ namespace Smart.Wasl.Homes.Services.HomeAppliances.Domain
     public class HomeAreaType : IAuditableEntity
     {
      
-        public HomeAreaType(int paraHomeAreaTypeId)
+        public HomeAreaType(int paramHomeAreaTypeId)
         {
-            Id = paraHomeAreaTypeId;
+            Id = paramHomeAreaTypeId;
         }
 
         public HomeAreaType()

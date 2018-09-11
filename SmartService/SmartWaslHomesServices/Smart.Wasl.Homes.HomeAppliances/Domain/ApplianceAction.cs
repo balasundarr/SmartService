@@ -13,9 +13,9 @@ namespace Smart.Wasl.Homes.Services.HomeAppliances.Domain
         {
         }
 
-        public ApplianceAction(int paraApplianceActionId)
+        public ApplianceAction(int paramApplianceActionId)
         {
-            Id = paraApplianceActionId;
+            Id = paramApplianceActionId;
         }
 
         public int Id { get; set; }

@@ -18,14 +18,14 @@ namespace Smart.Wasl.Homes.Services.HomeAppliances.Services
         {
         }
        
-        public Task<String> GetApplianceState(int paraApplianceID)
+        public Task<String> GetApplianceState(int paramApplianceID)
         {
             throw new NotImplementedException();
         }
 
 
 
-        public Task<Int32> SetApplianceAction(int paraApplianceID, string paraAction)
+        public Task<Int32> SetApplianceAction(int paramApplianceID, string paraAction)
         {
             throw new NotImplementedException();
         }

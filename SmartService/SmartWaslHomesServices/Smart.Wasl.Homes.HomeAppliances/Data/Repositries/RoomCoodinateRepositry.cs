@@ -18,23 +18,23 @@ namespace Smart.Wasl.Homes.Services.HomeAppliances.Data.Repositries
         {
         }
 
-        public async Task<int> AddRoomCoordinateAsync(RoomCoordinate paraentity)
+        public async Task<int> AddRoomCoordinateAsync(RoomCoordinate paramEntity)
         {
-            Add(paraentity);
+            Add(paramEntity);
 
             return await CommitChangesAsync();
         }
-        public async Task<int> UpdateRoomCoordinateAsync(RoomCoordinate parachanges)
+        public async Task<int> UpdateRoomCoordinateAsync(RoomCoordinate paramChanges)
         {
-            Update(parachanges);
+            Update(paramChanges);
 
             return await CommitChangesAsync();
         }
 
 
-        public async Task<int> DeleteRoomCoordinateAsync(RoomCoordinate paraentity)
+        public async Task<int> DeleteRoomCoordinateAsync(RoomCoordinate paramEntity)
         {
-            Remove(paraentity);
+            Remove(paramEntity);
 
             return await CommitChangesAsync();
         }

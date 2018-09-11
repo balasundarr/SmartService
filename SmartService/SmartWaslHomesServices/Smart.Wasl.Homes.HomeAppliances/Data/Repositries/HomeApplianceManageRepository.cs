@@ -20,202 +20,202 @@ namespace Smart.Wasl.Homes.Services.HomeAppliances.Services
         {
 
         }
-        public async Task<Int32> AddAEntityAsync(IEntity paraentity)
+        public async Task<Int32> AddAEntityAsync(IEntity paramEntity)
         {
-            String local_EntityName = paraentity.GetType().ToString();
+            String local_EntityName = paramEntity.GetType().ToString();
             if ( local_EntityName.Equals("Address"))
             {
                 IAddressRepositry local_Repositry = new AddressRepositry(UserInfo, DbContext as HomeAppliancesContext);
-                return (await (local_Repositry.AddAddressAsync(paraentity as Address)));
+                return (await (local_Repositry.AddAddressAsync(paramEntity as Address)));
             }
             if (local_EntityName.Equals("ApplianceAction"))
             {
                 IApplianceActionRepositry local_Repositry = new ApplianceActionRepositry(UserInfo, DbContext as HomeAppliancesContext);
-                return (await (local_Repositry.AddApplianceActioneAsync(paraentity as ApplianceAction)));
+                return (await (local_Repositry.AddApplianceActioneAsync(paramEntity as ApplianceAction)));
             }
             if (local_EntityName.Equals("Appliance"))
             {
                 IApplianceRepositry local_Repositry = new ApplianceRepositry(UserInfo, DbContext as HomeAppliancesContext);
-                return (await (local_Repositry.AddApplianceAsync(paraentity as Appliance)));
+                return (await (local_Repositry.AddApplianceAsync(paramEntity as Appliance)));
             }
             if (local_EntityName.Equals("City"))
             {
                 ICityRepositry local_Repositry = new CityRepositry(UserInfo, DbContext as HomeAppliancesContext);
-                return (await (local_Repositry.AddCityAsync(paraentity as City)));
+                return (await (local_Repositry.AddCityAsync(paramEntity as City)));
             }
             if (local_EntityName.Equals("Contact"))
             {
                 IContactRepositry local_Repositry = new ContactRepositry(UserInfo, DbContext as HomeAppliancesContext);
-                return (await (local_Repositry.AddContacteAsync(paraentity as Contact)));
+                return (await (local_Repositry.AddContacteAsync(paramEntity as Contact)));
             }
             if (local_EntityName.Equals("ContactType"))
             {
                 IContactTypeRepositry local_Repositry = new ContactTypeRepositry(UserInfo, DbContext as HomeAppliancesContext);
-                return (await (local_Repositry.AddContactTypeAsync(paraentity as ContactType)));
+                return (await (local_Repositry.AddContactTypeAsync(paramEntity as ContactType)));
             }
             if (local_EntityName.Equals("Country"))
             {
                 ICountryRepositry local_Repositry = new CountryRepositry(UserInfo, DbContext as HomeAppliancesContext);
-                return (await (local_Repositry.AddCountryAsync(paraentity as Country)));
+                return (await (local_Repositry.AddCountryAsync(paramEntity as Country)));
             }
             if (local_EntityName.Equals("Entrance"))
             {
                 IEntranceRepositry local_Repositry = new EntranceRepositry(UserInfo, DbContext as HomeAppliancesContext);
-                return (await (local_Repositry.AddEntranceAsync(paraentity as Entrance)));
+                return (await (local_Repositry.AddEntranceAsync(paramEntity as Entrance)));
             }
             if (local_EntityName.Equals("HomeAreaType"))
             {
                 IHomeAreaTypeRepositry local_Repositry = new HomeAreaTypeRepositry(UserInfo, DbContext as HomeAppliancesContext);
-                return (await (local_Repositry.AddHomeAreaTypeAsync(paraentity as HomeAreaType)));
+                return (await (local_Repositry.AddHomeAreaTypeAsync(paramEntity as HomeAreaType)));
             }
             if (local_EntityName.Equals("Location"))
             {
                 ILocationRepositry local_Repositry = new LocationRepositry(UserInfo, DbContext as HomeAppliancesContext);
-                return (await (local_Repositry.AddLocationAsync(paraentity as Location)));
+                return (await (local_Repositry.AddLocationAsync(paramEntity as Location)));
             }
             if (local_EntityName.Equals("RoomCoordinate"))
             {
                 IRoomCoordinateRepositry local_Repositry = new RoomCoodinateRepositry(UserInfo, DbContext as HomeAppliancesContext);
-                return (await (local_Repositry.AddRoomCoordinateAsync(paraentity as RoomCoordinate)));
+                return (await (local_Repositry.AddRoomCoordinateAsync(paramEntity as RoomCoordinate)));
             }
             if (local_EntityName.Equals("State"))
             {
                 IStateRepositry local_Repositry = new StatesRepositry(UserInfo, DbContext as HomeAppliancesContext);
-                return (await (local_Repositry.AddStateAsync(paraentity as State)));
+                return (await (local_Repositry.AddStateAsync(paramEntity as State)));
             }
             throw new NotFiniteNumberException();
         }
 
-        public async Task<Int32> UpdateEntityAsync(IEntity parachanges)
+        public async Task<Int32> UpdateEntityAsync(IEntity paramChanges)
         {
-            String local_EntityName = parachanges.GetType().ToString();
+            String local_EntityName = paramChanges.GetType().ToString();
             if (local_EntityName.Equals("Address"))
             {
                 IAddressRepositry local_Repositry = new AddressRepositry(UserInfo, DbContext as HomeAppliancesContext);
-                return (await(local_Repositry.UpdateAddressAsync(parachanges as Address)));
+                return (await(local_Repositry.UpdateAddressAsync(paramChanges as Address)));
             }
             if (local_EntityName.Equals("ApplianceAction"))
             {
                 IApplianceActionRepositry local_Repositry = new ApplianceActionRepositry(UserInfo, DbContext as HomeAppliancesContext);
-                return (await(local_Repositry.UpdateApplianceActionAsync(parachanges as ApplianceAction)));
+                return (await(local_Repositry.UpdateApplianceActionAsync(paramChanges as ApplianceAction)));
             }
             if (local_EntityName.Equals("Appliance"))
             {
                 IApplianceRepositry local_Repositry = new ApplianceRepositry(UserInfo, DbContext as HomeAppliancesContext);
-                return (await(local_Repositry.UpdateApplianceAsync(parachanges as Appliance)));
+                return (await(local_Repositry.UpdateApplianceAsync(paramChanges as Appliance)));
             }
             if (local_EntityName.Equals("City"))
             {
                 ICityRepositry local_Repositry = new CityRepositry(UserInfo, DbContext as HomeAppliancesContext);
-                return (await(local_Repositry.UpdateCityAsync(parachanges as City)));
+                return (await(local_Repositry.UpdateCityAsync(paramChanges as City)));
             }
             if (local_EntityName.Equals("Contact"))
             {
                 IContactRepositry local_Repositry = new ContactRepositry(UserInfo, DbContext as HomeAppliancesContext);
-                return (await(local_Repositry.UpdateContactAsync(parachanges as Contact)));
+                return (await(local_Repositry.UpdateContactAsync(paramChanges as Contact)));
             }
             if (local_EntityName.Equals("ContactType"))
             {
                 IContactTypeRepositry local_Repositry = new ContactTypeRepositry(UserInfo, DbContext as HomeAppliancesContext);
-                return (await(local_Repositry.UpdateContactTypeAsync(parachanges as ContactType)));
+                return (await(local_Repositry.UpdateContactTypeAsync(paramChanges as ContactType)));
             }
             if (local_EntityName.Equals("Country"))
             {
                 ICountryRepositry local_Repositry = new CountryRepositry(UserInfo, DbContext as HomeAppliancesContext);
-                return (await(local_Repositry.UpdateCountryAsync(parachanges as Country)));
+                return (await(local_Repositry.UpdateCountryAsync(paramChanges as Country)));
             }
             if (local_EntityName.Equals("Entrance"))
             {
                 IEntranceRepositry local_Repositry = new EntranceRepositry(UserInfo, DbContext as HomeAppliancesContext);
-                return (await(local_Repositry.UpdateEntranceAsync(parachanges as Entrance)));
+                return (await(local_Repositry.UpdateEntranceAsync(paramChanges as Entrance)));
             }
             if (local_EntityName.Equals("HomeAreaType"))
             {
                 IHomeAreaTypeRepositry local_Repositry = new HomeAreaTypeRepositry(UserInfo, DbContext as HomeAppliancesContext);
-                return (await(local_Repositry.UpdateHomeAreaTypeAsync(parachanges as HomeAreaType)));
+                return (await(local_Repositry.UpdateHomeAreaTypeAsync(paramChanges as HomeAreaType)));
             }
             if (local_EntityName.Equals("Location"))
             {
                 ILocationRepositry local_Repositry = new LocationRepositry(UserInfo, DbContext as HomeAppliancesContext);
-                return (await(local_Repositry.UpdateLocationAsync(parachanges as Location)));
+                return (await(local_Repositry.UpdateLocationAsync(paramChanges as Location)));
             }
             if (local_EntityName.Equals("RoomCoordinate"))
             {
                 IRoomCoordinateRepositry local_Repositry = new RoomCoodinateRepositry(UserInfo, DbContext as HomeAppliancesContext);
-                return (await(local_Repositry.UpdateRoomCoordinateAsync(parachanges as RoomCoordinate)));
+                return (await(local_Repositry.UpdateRoomCoordinateAsync(paramChanges as RoomCoordinate)));
             }
             if (local_EntityName.Equals("State"))
             {
                 IStateRepositry local_Repositry = new StatesRepositry(UserInfo, DbContext as HomeAppliancesContext);
-                return (await(local_Repositry.UpdateStateAsync(parachanges as State)));
+                return (await(local_Repositry.UpdateStateAsync(paramChanges as State)));
             }
          
             throw new NotFiniteNumberException();
         }
 
 
-        public async Task<Int32> DeleteEntityAsync(IEntity paraentity)
+        public async Task<Int32> DeleteEntityAsync(IEntity paramEntity)
         {
-            String local_EntityName = paraentity.GetType().ToString();
+            String local_EntityName = paramEntity.GetType().ToString();
             if (local_EntityName.Equals("Address"))
             {
                 IAddressRepositry local_Repositry = new AddressRepositry(UserInfo, DbContext as HomeAppliancesContext);
-                return (await(local_Repositry.DeleteAddressAsync(paraentity as Address)));
+                return (await(local_Repositry.DeleteAddressAsync(paramEntity as Address)));
             }
             if (local_EntityName.Equals("ApplianceAction"))
             {
                 IApplianceActionRepositry local_Repositry = new ApplianceActionRepositry(UserInfo, DbContext as HomeAppliancesContext);
-                return (await(local_Repositry.DeleteApplianceActioneAsync(paraentity as ApplianceAction)));
+                return (await(local_Repositry.DeleteApplianceActioneAsync(paramEntity as ApplianceAction)));
             }
             if (local_EntityName.Equals("Appliance"))
             {
                 IApplianceRepositry local_Repositry = new ApplianceRepositry(UserInfo, DbContext as HomeAppliancesContext);
-                return (await(local_Repositry.DeleteApplianceAsync(paraentity as Appliance)));
+                return (await(local_Repositry.DeleteApplianceAsync(paramEntity as Appliance)));
             }
             if (local_EntityName.Equals("City"))
             {
                 ICityRepositry local_Repositry = new CityRepositry(UserInfo, DbContext as HomeAppliancesContext);
-                return (await(local_Repositry.DeleteCityeAsync(paraentity as City)));
+                return (await(local_Repositry.DeleteCityeAsync(paramEntity as City)));
             }
             if (local_EntityName.Equals("Contact"))
             {
                 IContactRepositry local_Repositry = new ContactRepositry(UserInfo, DbContext as HomeAppliancesContext);
-                return (await(local_Repositry.DeleteContactAsync(paraentity as Contact)));
+                return (await(local_Repositry.DeleteContactAsync(paramEntity as Contact)));
             }
             if (local_EntityName.Equals("ContactType"))
             {
                 IContactTypeRepositry local_Repositry = new ContactTypeRepositry(UserInfo, DbContext as HomeAppliancesContext);
-                return (await(local_Repositry.DeleteContactTypeAsync(paraentity as ContactType)));
+                return (await(local_Repositry.DeleteContactTypeAsync(paramEntity as ContactType)));
             }
             if (local_EntityName.Equals("Country"))
             {
                 ICountryRepositry local_Repositry = new CountryRepositry(UserInfo, DbContext as HomeAppliancesContext);
-                return (await(local_Repositry.DeleteCountryAsync(paraentity as Country)));
+                return (await(local_Repositry.DeleteCountryAsync(paramEntity as Country)));
             }
             if (local_EntityName.Equals("Entrance"))
             {
                 IEntranceRepositry local_Repositry = new EntranceRepositry(UserInfo, DbContext as HomeAppliancesContext);
-                return (await(local_Repositry.DeleteEntranceAsync(paraentity as Entrance)));
+                return (await(local_Repositry.DeleteEntranceAsync(paramEntity as Entrance)));
             }
             if (local_EntityName.Equals("HomeAreaType"))
             {
                 IHomeAreaTypeRepositry local_Repositry = new HomeAreaTypeRepositry(UserInfo, DbContext as HomeAppliancesContext);
-                return (await(local_Repositry.DeleteHomeAreaTypeAsync(paraentity as HomeAreaType)));
+                return (await(local_Repositry.DeleteHomeAreaTypeAsync(paramEntity as HomeAreaType)));
             }
             if (local_EntityName.Equals("Location"))
             {
                 ILocationRepositry local_Repositry = new LocationRepositry(UserInfo, DbContext as HomeAppliancesContext);
-                return (await(local_Repositry.DeleteLocationAsync(paraentity as Location)));
+                return (await(local_Repositry.DeleteLocationAsync(paramEntity as Location)));
             }
             if (local_EntityName.Equals("RoomCoordinate"))
             {
                 IRoomCoordinateRepositry local_Repositry = new RoomCoodinateRepositry(UserInfo, DbContext as HomeAppliancesContext);
-                return (await(local_Repositry.DeleteRoomCoordinateAsync(paraentity as RoomCoordinate)));
+                return (await(local_Repositry.DeleteRoomCoordinateAsync(paramEntity as RoomCoordinate)));
             }
             if (local_EntityName.Equals("State"))
             {
                 IStateRepositry local_Repositry = new StatesRepositry(UserInfo, DbContext as HomeAppliancesContext);
-                return (await(local_Repositry.DeleteStateAsync(paraentity as State)));
+                return (await(local_Repositry.DeleteStateAsync(paramEntity as State)));
             }
             throw new NotFiniteNumberException();
         }

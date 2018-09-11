@@ -10,13 +10,13 @@ namespace Smart.Wasl.Homes.Services.HomeAppliances.Data.Contracts
     public interface IHomeApplianceInfoRepositry
     {
 
-        Task<IEntity> GetObjectsById(int paraId, IEntity paraEntity);
+        Task<IEntity> GetObjectsById(int paraId, IEntity paramEntity);
 
         Task<IEnumerable<IEntity>> GetAll(String paramName);
 
-        Task<IEntity> GetLocationById(int paraId, IEntity paraEntity);
+        Task<IEntity> GetLocationById(int paraId, IEntity paramEntity);
 
-        IQueryable<IEntity> GetHomeAppliancesObjets(int paraObjectId, IEntity paraEntity);
+        IQueryable<IEntity> GetHomeAppliancesObjets(int paraObjectId, IEntity paramEntity);
 
     }
 }

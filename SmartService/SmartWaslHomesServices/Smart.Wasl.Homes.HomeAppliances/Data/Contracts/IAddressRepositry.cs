@@ -11,13 +11,13 @@ namespace Smart.Wasl.Homes.Services.HomeAppliances.Data.Contracts
 {
     public interface IAddressRepositry: IRepository
     {
-        Task<Int32> AddAddressAsync(Address paraentity);
+        Task<Int32> AddAddressAsync(Address paramEntity);
 
-        Task<Int32> UpdateAddressAsync(Address parachanges);
+        Task<Int32> UpdateAddressAsync(Address paramChanges);
 
-        Task<Int32> DeleteAddressAsync(Address paraentity);
+        Task<Int32> DeleteAddressAsync(Address paramEntity);
 
-        Task<Address> GetAddressById(int paraAddressId);
+        Task<Address> GetAddressById(int paramAddressId);
 
         Task<IEnumerable<Address>> GetAll();
 

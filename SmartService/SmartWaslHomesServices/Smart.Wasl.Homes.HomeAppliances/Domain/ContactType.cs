@@ -10,9 +10,9 @@ namespace Smart.Wasl.Homes.Services.HomeAppliances.Domain
     public class ContactType : IAuditableEntity
     {
 
-        public ContactType(int paraContactTypeId)
+        public ContactType(int paramContactTypeId)
         {
-            Id = paraContactTypeId;
+            Id = paramContactTypeId;
         }
 
         public ContactType()

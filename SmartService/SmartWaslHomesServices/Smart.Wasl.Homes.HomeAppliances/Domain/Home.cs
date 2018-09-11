@@ -12,9 +12,9 @@ namespace Smart.Wasl.Homes.Services.HomeAppliances.Domain
     public class Home : IAuditableEntity
     {
        
-        public Home(int paraHomeId)
+        public Home(int paramHomeId)
         {
-            Id = paraHomeId;
+            Id = paramHomeId;
         }
         public Home()
         {

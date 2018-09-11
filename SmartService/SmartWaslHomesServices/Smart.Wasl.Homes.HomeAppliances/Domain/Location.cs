@@ -11,9 +11,9 @@ namespace Smart.Wasl.Homes.Services.HomeAppliances.Domain
     public class Location : IAuditableEntity
     {
        
-        public Location(int paraLocationId)
+        public Location(int paramLocationId)
         {
-            Id = paraLocationId;
+            Id = paramLocationId;
         }
         public Location()
         {

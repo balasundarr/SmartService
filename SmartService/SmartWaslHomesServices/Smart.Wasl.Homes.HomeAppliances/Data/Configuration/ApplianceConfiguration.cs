@@ -10,42 +10,42 @@ namespace Smart.Wasl.Homes.Services.HomeAppliances.Data.Configuration
 {
     public class ApplianceConfiguration : IEntityTypeConfiguration<Appliance>
     {
-        public void Configure(EntityTypeBuilder<Appliance> parabuilder)
+        public void Configure(EntityTypeBuilder<Appliance> paramBuilder)
         {
             //Primary Table
-            parabuilder.ToTable("Appliance");
+            paramBuilder.ToTable("Appliance");
 
             // Set key for entity
-            parabuilder.HasKey(p => p.Id);
+            paramBuilder.HasKey(p => p.Id);
 
             // Set identity for entity (auto increment)
-            parabuilder.Property(p => p.Id).UseSqlServerIdentityColumn();
+            paramBuilder.Property(p => p.Id).UseSqlServerIdentityColumn();
 
             // Set mapping for columns
-            parabuilder.Property(p => p.Id).HasColumnType("int").IsRequired();
-         
-            parabuilder.Property(p => p.Name).HasColumnType("varchar(255)").IsRequired();
-            parabuilder.Property(p => p.PurchasedDate).HasColumnType("datetime").IsRequired();
-            parabuilder.Property(p => p.NextServiceDate).HasColumnType("datetime").IsRequired();
-            parabuilder.Property(p => p.WarrantyYears).HasColumnType("int").IsRequired();
+            paramBuilder.Property(p => p.Id).HasColumnType("int").IsRequired();
 
-            parabuilder.Property(p => p.HomeAreaTypeId).HasColumnType("int").IsRequired();
-            parabuilder.Property(p => p.ApplianceActionId).HasColumnType("int").IsRequired();
-            parabuilder.Property(p => p.LocationId).HasColumnType("int").IsRequired();
-                             
-            parabuilder.Property(p => p.CreationUser).HasColumnType("varchar(25)").IsRequired();
-            parabuilder.Property(p => p.CreationDateTime).HasColumnType("datetime").IsRequired();
-            parabuilder.Property(p => p.LastUpdateUser).HasColumnType("varchar(25)");
-            parabuilder.Property(p => p.LastUpdateDateTime).HasColumnType("datetime");
+            paramBuilder.Property(p => p.Name).HasColumnType("varchar(255)").IsRequired();
+            paramBuilder.Property(p => p.PurchasedDate).HasColumnType("datetime").IsRequired();
+            paramBuilder.Property(p => p.NextServiceDate).HasColumnType("datetime").IsRequired();
+            paramBuilder.Property(p => p.WarrantyYears).HasColumnType("int").IsRequired();
+
+            paramBuilder.Property(p => p.HomeAreaTypeId).HasColumnType("int").IsRequired();
+            paramBuilder.Property(p => p.ApplianceActionId).HasColumnType("int").IsRequired();
+            paramBuilder.Property(p => p.LocationId).HasColumnType("int").IsRequired();
+
+            paramBuilder.Property(p => p.CreationUser).HasColumnType("varchar(25)").IsRequired();
+            paramBuilder.Property(p => p.CreationDateTime).HasColumnType("datetime").IsRequired();
+            paramBuilder.Property(p => p.LastUpdateUser).HasColumnType("varchar(25)");
+            paramBuilder.Property(p => p.LastUpdateDateTime).HasColumnType("datetime");
 
             // Set concurrency token for entity
-            parabuilder.Property(p => p.Timestamp).ValueGeneratedOnAddOrUpdate().IsConcurrencyToken();
+            paramBuilder.Property(p => p.Timestamp).ValueGeneratedOnAddOrUpdate().IsConcurrencyToken();
 
             // Add configuration for foreign keys
-            //parabuilder.HasMany(p => p.ApplianceAction).WithOne(e => e.Appliance_ApplianceAction);
-            //parabuilder.HasOne(p => p.Location).WithOne(p => p.Appliance_Location).HasForeignKey<Location>(p => p.Id);
-            //parabuilder.HasMany(p => p.Contacts).WithOne(e => e.Appliance_Contact);
-            //parabuilder.HasMany(p => p.Addresses).WithOne(e => e.Appliance_Address);
+            //paramBuilder.HasMany(p => p.ApplianceAction).WithOne(e => e.Appliance_ApplianceAction);
+            //paramBuilder.HasOne(p => p.Location).WithOne(p => p.Appliance_Location).HasForeignKey<Location>(p => p.Id);
+            //paramBuilder.HasMany(p => p.Contacts).WithOne(e => e.Appliance_Contact);
+            //paramBuilder.HasMany(p => p.Addresses).WithOne(e => e.Appliance_Address);
 
         }
     }

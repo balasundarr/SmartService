@@ -18,48 +18,48 @@ namespace Smart.Wasl.Homes.Services.HomeAppliances.Domain.Repositries
         {
         }
 
-        public async Task<int> AddContacteAsync(Contact paraentity)
+        public async Task<int> AddContacteAsync(Contact paramEntity)
         {
-            Add(paraentity);
+            Add(paramEntity);
 
             return await CommitChangesAsync();
         }
 
-        public async Task<int> UpdateContactAsync(Contact parachanges)
+        public async Task<int> UpdateContactAsync(Contact paramChanges)
         {
-            Update(parachanges);
+            Update(paramChanges);
 
             return await CommitChangesAsync();
         }
 
-        public async Task<int> DeleteContactAsync(Contact paraentity)
+        public async Task<int> DeleteContactAsync(Contact paramEntity)
         {
-            Remove(paraentity);
+            Remove(paramEntity);
 
             return await CommitChangesAsync();
         }
 
-        public async Task<Contact> GetContactById(int paraContactId)
+        public async Task<Contact> GetContactById(int paramContactId)
             => await DbContext
                .Set<Contact>()
-               .FirstOrDefaultAsync(item => item.Id == paraContactId);
+               .FirstOrDefaultAsync(item => item.Id == paramContactId);
 
         public async Task<IEnumerable<Contact>> GetAll()
              => await DbContext
                 .Set<Contact>()
                 .ToListAsync();
 
-        public async Task<ICollection<Address>> GetContactAddressById(int paraContactId)
+        public async Task<ICollection<Address>> GetContactAddressById(int paramContactId)
         {
-            Contact local_Contact = await DbContext.Set<Contact>().FirstOrDefaultAsync(item => item.Id == paraContactId);
+            Contact local_Contact = await DbContext.Set<Contact>().FirstOrDefaultAsync(item => item.Id == paramContactId);
             return (await DbContext.Set<Address>()
                 .Where(item => item.ContactId == local_Contact.Id)
                 .ToListAsync());
 
         }
-        public  async Task<ContactType> GetContactTypeById(int paraContactId)
+        public  async Task<ContactType> GetContactTypeById(int paramContactId)
         {
-            Contact local_Contact = await DbContext.Set<Contact>().FirstOrDefaultAsync(item => item.Id == paraContactId);
+            Contact local_Contact = await DbContext.Set<Contact>().FirstOrDefaultAsync(item => item.Id == paramContactId);
             return (await GetContactTypeById(local_Contact.ContactTypeId));
         }
 

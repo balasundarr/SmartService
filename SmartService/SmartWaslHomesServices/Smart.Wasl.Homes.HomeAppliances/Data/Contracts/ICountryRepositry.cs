@@ -9,17 +9,17 @@ namespace Smart.Wasl.Homes.Services.HomeAppliances.Data.Contracts
 {
     public interface ICountryRepositry : IRepository
     {
-        Task<Int32> AddCountryAsync(Country paraentity);
+        Task<Int32> AddCountryAsync(Country paramEntity);
 
-        Task<Int32> UpdateCountryAsync(Country parachanges);
+        Task<Int32> UpdateCountryAsync(Country paramChanges);
 
-        Task<Int32> DeleteCountryAsync(Country paraentity);
+        Task<Int32> DeleteCountryAsync(Country paramEntity);
 
-        Task<Country> GetCountryById(int paraCountryId);
+        Task<Country> GetCountryById(int paramCountryId);
 
         Task<IEnumerable<Country>> GetAll();
 
-        Task<ICollection<State>> GetStatesById(int paraCountryId);
+        Task<ICollection<State>> GetStatesById(int paramCountryId);
 
 
 

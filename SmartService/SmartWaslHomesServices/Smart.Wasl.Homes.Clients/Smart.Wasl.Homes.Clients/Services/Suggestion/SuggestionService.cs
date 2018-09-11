@@ -1,12 +1,12 @@
-﻿using Smart.Wasl.Homes.Clients.Core.Extensions;
-using Smart.Wasl.Homes.Clients.Core.Services.Request;
+﻿using SmartHotel.Clients.Core.Extensions;
+using SmartHotel.Clients.Core.Services.Request;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Globalization;
 using System.Threading.Tasks;
 
-namespace Smart.Wasl.Homes.Clients.Core.Services.Settings
+namespace SmartHotel.Clients.Core.Services.Suggestion
 {
     public class SuggestionService : ISuggestionService
     {

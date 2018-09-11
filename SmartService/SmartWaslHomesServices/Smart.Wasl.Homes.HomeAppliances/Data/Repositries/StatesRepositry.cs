@@ -17,21 +17,21 @@ namespace Smart.Wasl.Homes.Services.HomeAppliances.Domain.Repositries
             : base(parauserInfo, paradbContext)
         {
         }
-        public async Task<Int32> AddStateAsync(State paraentity)
+        public async Task<Int32> AddStateAsync(State paramEntity)
         {
-            Add(paraentity);
+            Add(paramEntity);
 
             return await CommitChangesAsync();
         }
-        public async Task<Int32> UpdateStateAsync(State parachanges)
+        public async Task<Int32> UpdateStateAsync(State paramChanges)
         {
-            Update(parachanges);
+            Update(paramChanges);
 
             return await CommitChangesAsync();
         }
-        public async Task<Int32> DeleteStateAsync(State paraentity)
+        public async Task<Int32> DeleteStateAsync(State paramEntity)
         {
-            Remove(paraentity);
+            Remove(paramEntity);
 
             return await CommitChangesAsync();
         }

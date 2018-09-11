@@ -10,13 +10,13 @@ namespace Smart.Wasl.Homes.Services.HomeAppliances.Data.Contracts
     public interface ILocationRepositry : IRepository
     {
 
-        Task<Int32> AddLocationAsync(Location paraentity);
+        Task<Int32> AddLocationAsync(Location paramEntity);
 
-        Task<Int32> UpdateLocationAsync(Location parachanges);
+        Task<Int32> UpdateLocationAsync(Location paramChanges);
 
-        Task<Int32> DeleteLocationAsync(Location paraentity);
+        Task<Int32> DeleteLocationAsync(Location paramEntity);
 
-        Task<Location> GetLocationById(int paraLocationId);
+        Task<Location> GetLocationById(int paramLocationId);
 
         Task<IEnumerable<Location>> GetAll();
     }

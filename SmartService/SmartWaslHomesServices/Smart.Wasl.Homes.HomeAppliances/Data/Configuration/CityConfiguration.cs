@@ -11,38 +11,38 @@ namespace Smart.Wasl.Homes.Services.HomeAppliances.Data.Configuration
 {
     public class CityConfiguration : IEntityTypeConfiguration<City>
     {
-        public void Configure(EntityTypeBuilder<City> parabuilder)
+        public void Configure(EntityTypeBuilder<City> paramBuilder)
         {
             //Primary Table
-            parabuilder.ToTable("City");
+            paramBuilder.ToTable("City");
 
             // Mapping for table
-           
+
 
 
             // Set key for entity
-            parabuilder.HasKey(p => p.Id);
+            paramBuilder.HasKey(p => p.Id);
 
             // Set identity for entity (auto increment)
-            parabuilder.Property(p => p.Id).UseSqlServerIdentityColumn();
+            paramBuilder.Property(p => p.Id).UseSqlServerIdentityColumn();
 
             // Set mapping for columns
-            parabuilder.Property(p => p.Id).HasColumnType("int").IsRequired();
-            parabuilder.Property(p => p.Name).HasColumnType("varchar(255)").IsRequired();
-            parabuilder.Property(p => p.StateId).HasColumnType("int").IsRequired();
+            paramBuilder.Property(p => p.Id).HasColumnType("int").IsRequired();
+            paramBuilder.Property(p => p.Name).HasColumnType("varchar(255)").IsRequired();
+            paramBuilder.Property(p => p.StateId).HasColumnType("int").IsRequired();
 
-            parabuilder.Property(p => p.CreationUser).HasColumnType("varchar(25)").IsRequired();
-            parabuilder.Property(p => p.CreationDateTime).HasColumnType("datetime").IsRequired();
-            parabuilder.Property(p => p.LastUpdateUser).HasColumnType("varchar(25)");
-            parabuilder.Property(p => p.LastUpdateDateTime).HasColumnType("datetime");
+            paramBuilder.Property(p => p.CreationUser).HasColumnType("varchar(25)").IsRequired();
+            paramBuilder.Property(p => p.CreationDateTime).HasColumnType("datetime").IsRequired();
+            paramBuilder.Property(p => p.LastUpdateUser).HasColumnType("varchar(25)");
+            paramBuilder.Property(p => p.LastUpdateDateTime).HasColumnType("datetime");
 
             // Set concurrency token for entity
-            parabuilder.Property(p => p.Timestamp).ValueGeneratedOnAddOrUpdate().IsConcurrencyToken();
+            paramBuilder.Property(p => p.Timestamp).ValueGeneratedOnAddOrUpdate().IsConcurrencyToken();
 
             //// Add configuration for foreign keys
-            //parabuilder.HasOne(p => p.State).WithOne(p => p.City_Address).HasForeignKey<State>(p => p.Id);
-       
-           
+            //paramBuilder.HasOne(p => p.State).WithOne(p => p.City_Address).HasForeignKey<State>(p => p.Id);
+
+
         }
     }
 }
